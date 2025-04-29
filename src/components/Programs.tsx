@@ -64,7 +64,7 @@ const Programs = () => {
     //   featured: true
     // },
     {
-      title: "HYROX Training",
+      title: "HYBRID Training",
       description: "A training program that combines endurance, strength, and functional movement into one powerful system. Designed for athletes and everyday movers alike, this program boosts your real-world best.",
       features: [
         "Endurance (Engine Work)",

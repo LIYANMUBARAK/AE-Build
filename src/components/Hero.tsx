@@ -1,16 +1,20 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import HomePic from './shared/assets/images/HeroSection.jpeg'
+import HomePic2 from './shared/assets/images/HeroSection2.jpeg'
+
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16 bg-black">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black/80 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black/90 z-10"></div>
       
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          // src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+          src = {HomePic2}
           alt="Fitness background" 
           className="w-full h-full object-cover opacity-50"
         />
