@@ -1,6 +1,8 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 
+const phoneNumber = "971565974353"
+
 type PricingCardProps = {
   title: string;
   price: string | number;
@@ -20,9 +22,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
   features, 
   notIncluded, 
   buttonText, 
-  highlighted = false 
+  highlighted = false ,
 }) => {
+  console.log("Rendering card for:", title)
   return (
+    
     <div 
       className={`rounded-sm overflow-hidden transition-transform duration-300 hover:-translate-y-2 ${
         highlighted 
@@ -53,16 +57,19 @@ const PricingCard: React.FC<PricingCardProps> = ({
             </li>
           ))}
         </ul>
-        
-        <button 
-          className={`w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
-            highlighted 
-              ? 'bg-gold-500 text-black hover:bg-gold-600' 
-              : 'bg-white/10 text-white hover:bg-white/20'
-          }`}
-        >
-          {buttonText}
-        </button>
+        <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    `I want to join the ${title} programme.`
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`block text-center w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
+    highlighted 
+      ? 'bg-gold-500 text-black hover:bg-gold-600' 
+      : 'bg-white/10 text-white hover:bg-white/20'
+  }`}
+>
+  {buttonText}
+</a>
       </div>
     </div>
   );
@@ -85,7 +92,8 @@ const Pricing = () => {
         "Personal training sessions",
         "Advanced nutrition coaching"
       ],
-      buttonText: "Get Started"
+      buttonText: "Get Started",
+      
     },
     {
       title: "Premium",

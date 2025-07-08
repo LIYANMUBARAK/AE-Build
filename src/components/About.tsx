@@ -27,8 +27,8 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
                 "Certified Performance Coach",
-                "REPS Category A Trainer",
-                "NSQF Level 4 Fitness Trainer",
+                "REPS Category A Coach",
+                "NSQF Level 4 Fitness Coach",
                 "Trauma Response Certified"
               ].map((feature, index) => (
                 <div key={index} className="flex items-center">

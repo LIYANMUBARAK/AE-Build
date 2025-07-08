@@ -1,5 +1,9 @@
 import React from 'react';
 import { CheckCircle, Clock, Flame, Trophy, Target, Dumbbell } from 'lucide-react';
+
+const phoneNumber = "971565974353"
+
+
 type ProgramCardProps = {
   title: string;
   description: string;
@@ -37,13 +41,20 @@ const ProgramCard: React.FC<ProgramCardProps>= ({ title, description, features, 
             </li>
           ))}
         </ul>
-        <button className={`w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
-          featured 
-            ? 'bg-gold-500 text-black hover:bg-gold-600' 
-            : 'bg-white/10 text-white hover:bg-white/20'
-        }`}>
-          Learn More
-        </button>
+      <a
+href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+  `Hi, I'm interested in joining the "${title}" program. Could you please share more details?`
+)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`block text-center w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
+    featured 
+      ? 'bg-gold-500 text-black hover:bg-gold-600' 
+      : 'bg-white/10 text-white hover:bg-white/20'
+  }`}
+>
+  Learn More
+</a>
       </div>
     </div>
   );
@@ -64,20 +75,7 @@ const Programs = () => {
     //   featured: true
     // },
     {
-      title: "HYBRID Training",
-      description: "A training program that combines endurance, strength, and functional movement into one powerful system. Designed for athletes and everyday movers alike, this program boosts your real-world best.",
-      features: [
-        "Endurance (Engine Work)",
-        "Strength & Power",
-        "MetCon (Conditioning)",
-        "Movement Skills",
-        "Recovery & Resilience"
-      ],
-      image: "https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      featured: true
-    },
-    {
-      title: "Strength Mastery",
+      title: "Strength & Conditioning",
       description: "Build lean muscle and increase your strength with progressive resistance training.",
       features: [
         "Customized workout plans",
@@ -97,7 +95,21 @@ const Programs = () => {
         "Progress tracking"
       ],
       image: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }
+    },
+     {
+      title: "Hybrid / HYROX Training",
+      description: "A training program that combines endurance, strength, and functional movement into one powerful system. Designed for athletes and everyday movers alike, this program boosts your real-world best.",
+      features: [
+        "Endurance (Engine Work)",
+        "Strength & Power",
+        "MetCon (Conditioning)",
+        "Movement Skills",
+        "Recovery & Resilience"
+      ],
+      image: "https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      featured: true
+    },
+    
   ];
 
   return (
