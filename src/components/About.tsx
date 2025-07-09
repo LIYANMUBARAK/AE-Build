@@ -1,3 +1,4 @@
+//components/About.tsx
 import React from 'react';
 import trainingImg1 from './shared/assets/images/1.jpg'
 import trainingImg2 from './shared/assets/images/2.jpg'

@@ -1,3 +1,5 @@
+//components/Contact.tsx
+
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 

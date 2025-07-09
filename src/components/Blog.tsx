@@ -1,3 +1,4 @@
+//components/Blog.tsx
 import React from 'react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 

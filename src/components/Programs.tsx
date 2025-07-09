@@ -1,6 +1,5 @@
-// Step 1: Import necessary dependencies
 import React, { useState } from 'react';
-import { CheckCircle, Clock, Flame, Trophy, Target, Dumbbell } from 'lucide-react';
+import { CheckCircle, Clock, Flame, Trophy, Target, Dumbbell, Zap, Star, ArrowRight, ChevronRight } from 'lucide-react';
 
 const phoneNumber = "971565974353";
 
@@ -53,174 +52,122 @@ const pricingPackages = [
     popular: true
   }
 ];
-const ProgramCard = ({ title, description, features, image, featured = false, slug, onLearnMore }) => {
+
+interface ProgramCardProps {
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+  featured?: boolean;
+  slug: string;
+  onLearnMore: (slug: string) => void;
+}
+
+const ProgramCard: React.FC<ProgramCardProps> = ({ 
+  title, 
+  description, 
+  features, 
+  image, 
+  featured = false, 
+  slug, 
+  onLearnMore 
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div 
-      className={`bg-gray-900 rounded-sm overflow-hidden transition-transform duration-300 hover:-translate-y-2 ${
-        featured ? 'border-2 border-gold-500' : 'border border-white/10'
-      }`}
-    >
-      <div className="h-52 overflow-hidden relative">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-        />
-        {featured && (
-          <div className="absolute top-4 right-4 bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-sm">
-            FEATURED
+    <div className="relative">
+      {/* Featured badge - positioned outside the card */}
+      {featured && (
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+          <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+            <Star className="w-3 h-3" />
+            MOST POPULAR
           </div>
-        )}
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-        <p className="text-white/70 mb-4">{description}</p>
-        <ul className="space-y-2 mb-6">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start">
-              <CheckCircle className="text-gold-500 h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-              <span className="text-white/80">{feature}</span>
-            </li>
-          ))}
-        </ul>
-        <button
-          onClick={() => onLearnMore(slug)}
-          className={`block text-center w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
-            featured 
-              ? 'bg-gold-500 text-black hover:bg-gold-600' 
-              : 'bg-white/10 text-white hover:bg-white/20'
-          }`}
-        >
-          Learn More
-        </button>
+        </div>
+      )}
+      
+      <div 
+        className={`group relative bg-black rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer border border-gray-800 ${
+          featured 
+            ? 'ring-2 ring-yellow-500 shadow-2xl shadow-yellow-500/20 mt-4' 
+            : 'hover:shadow-2xl hover:shadow-yellow-500/10'
+        }`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Animated background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        {/* Image container */}
+        <div className="relative h-64 overflow-hidden">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          
+          {/* Floating elements */}
+          <div className="absolute top-4 right-4 w-12 h-12 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <Zap className="w-6 h-6 text-yellow-500" />
+          </div>
+        </div>
+        
+        {/* Content */}
+        <div className="p-8 relative z-10">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+            <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
+              {title}
+            </h3>
+          </div>
+          
+          <p className="text-white/70 mb-6 leading-relaxed">{description}</p>
+          
+          {/* Features list */}
+          <div className="space-y-3 mb-8">
+            {features.map((feature, index) => (
+              <div 
+                key={index} 
+                className="flex items-start"
+              >
+                <CheckCircle className="text-yellow-500 h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                <span className="text-white/80">
+                  {feature}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+          {/* CTA Button */}
+          <button
+            onClick={() => onLearnMore(slug)}
+            className={`group/btn relative w-full py-4 font-bold rounded-xl transition-all duration-300 overflow-hidden ${
+              featured 
+                ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-black hover:from-yellow-600 hover:to-yellow-700 shadow-lg hover:shadow-xl' 
+                : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-white/40'
+            }`}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              Learn More
+              <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-200" />
+            </span>
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-// const Modal = ({ selectedProgram, onClose }) => {
-//   return (
-//     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex justify-center items-center px-4">
-//       <div className="bg-gray-900 text-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/30">
-//         {/* Header */}
-//         <div className="sticky top-0 bg-gray-900 border-b border-gold-500/30 p-6 z-10">
-//           <div className="flex justify-between items-center">
-//             <div>
-//               <h2 className="text-2xl font-bold text-gold-500 mb-2">
-//                 {selectedProgram}
-//               </h2>
-//               <p className="text-white/70">Choose the perfect package for your fitness journey</p>
-//             </div>
-//             <button
-//               onClick={onClose}
-//               className="text-white/50 hover:text-white transition-colors text-2xl"
-//             >
-//               ×
-//             </button>
-//           </div>
-//         </div>
-
-//         {/* Packages Grid */}
-//         <div className="p-6">
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//             {pricingPackages.map((plan, index) => (
-//               <div 
-//                 key={plan.name} 
-//                 className={`relative bg-gray-800 rounded-lg p-6 border transition-all duration-300 hover:scale-105 ${
-//                   plan.popular 
-//                     ? 'border-gold-500 shadow-lg shadow-gold-500/20' 
-//                     : 'border-white/10 hover:border-white/20'
-//                 }`}
-//               >
-//                 {/* Popular Badge */}
-//                 {plan.popular && (
-//                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-//                     <div className="bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-full">
-//                       MOST POPULAR
-//                     </div>
-//                   </div>
-//                 )}
-
-//                 {/* Package Header */}
-//                 <div className="text-center mb-6">
-//                   <div className={`w-16 h-16 ${plan.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-//                     <span className="text-white font-bold text-lg">{plan.name[0]}</span>
-//                   </div>
-//                   <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-//                   <div className="text-2xl font-bold text-gold-500 mb-2">{plan.price}</div>
-//                   <p className="text-white/60 text-sm italic">{plan.tagline}</p>
-//                 </div>
-
-//                 {/* Description */}
-//                 <p className="text-white/80 text-sm mb-6 text-center">{plan.description}</p>
-
-//                 {/* Features List */}
-//                 <div className="space-y-3 mb-6">
-//                   {plan.features.map((feature, featureIndex) => (
-//                     <div key={featureIndex} className="flex items-start">
-//                       <CheckCircle className="text-gold-500 h-4 w-4 mr-3 mt-0.5 flex-shrink-0" />
-//                       <span className="text-white/90 text-sm">{feature}</span>
-//                     </div>
-//                   ))}
-//                 </div>
-
-//                 {/* CTA Button */}
-//                 <a
-//                   href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-//                     `Hi, I'm interested in the ${selectedProgram} program with the ${plan.name} package (${plan.price}). Can you share more details?`
-//                   )}`}
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className={`block w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${
-//                     plan.popular
-//                       ? 'bg-gold-500 text-black hover:bg-gold-600 shadow-lg hover:shadow-xl'
-//                       : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
-//                   }`}
-//                 >
-//                   Get Started
-//                 </a>
-// <a href={`/programs/${selectedProgram}`}>
-//   View Full Program Details →
-// </a>
-//               </div>
-//             ))}
-//           </div>
-
-//           {/* Footer */}
-//           <div className="mt-8 text-center">
-//             <p className="text-white/60 text-sm mb-4">
-//               Have questions? Need a custom package? Contact us directly.
-//             </p>
-//             <div className="flex justify-center space-x-4">
-//               <a
-//                 href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-//                   `Hi, I'd like to know more about the ${selectedProgram} program and discuss my fitness goals.`
-//                 )}`}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
-//               >
-//                 💬 Chat on WhatsApp
-//               </a>
-//               <button
-//                 onClick={onClose}
-//                 className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors"
-//               >
-//                 Close
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-const Programs = () => {
-  const [selectedProgram, setSelectedProgram] = useState(null);
+const Programs: React.FC = () => {
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
 
   const programs = [
-    { slug: 'strength-conditioning',
+    { 
+      slug: 'strength-conditioning',
       title: "Strength & Conditioning",
       description: "Build lean muscle and increase your strength with progressive resistance training.",
       features: [
@@ -244,7 +191,7 @@ const Programs = () => {
       image: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
     },
     {
-        slug: 'hybrid-hyrox-training',
+      slug: 'hybrid-hyrox-training',
       title: "Hybrid / HYROX Training",
       description: "A training program that combines endurance, strength, and functional movement into one powerful system.",
       features: [
@@ -259,42 +206,114 @@ const Programs = () => {
     },
   ];
 
+  const features = [
+    {
+      icon: Trophy,
+      title: "HYROX Ready",
+      description: "Specialized training to prepare you for HYROX competition success.",
+      color: "text-yellow-500"
+    },
+    {
+      icon: Target,
+      title: "Goal Focused",
+      description: "Personalized programs aligned with your specific fitness objectives.",
+      color: "text-blue-500"
+    },
+    {
+      icon: Dumbbell,
+      title: "Expert Guidance",
+      description: "Professional coaching with certified personal training experience.",
+      color: "text-green-500"
+    },
+    {
+      icon: Flame,
+      title: "Results Driven",
+      description: "Proven methods to help you achieve your desired transformation.",
+      color: "text-red-500"
+    }
+  ];
+
   return (
-    <section id="programs" className="py-20 bg-black">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Transformational <span className="text-gold-500">Programs</span></h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
-            Choose from our specialized training programs designed to help you achieve your specific fitness goals.
+    <section id="programs" className="relative py-20 bg-black overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 px-4 py-2 rounded-full text-yellow-400 text-sm font-medium mb-6">
+            <Trophy className="w-4 h-4" />
+            Premium Training Programs
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+            Transformational{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+              Programs
+            </span>
+          </h2>
+          
+          <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+            Choose from our specialized training programs designed to help you achieve your specific fitness goals with expert guidance and proven results.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Programs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {programs.map((program, index) => (
-<ProgramCard key={index} {...program} onLearnMore={(slug) => window.location.href = `/programs/${slug}`} />
-
-          ))}
-        </div>
-
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[{
-            icon: <Trophy className="h-10 w-10 text-gold-500 mb-4" />, title: "HYROX Ready", description: "Specialized training to prepare you for HYROX competition success."
-          },{
-            icon: <Target className="h-10 w-10 text-gold-500 mb-4" />, title: "Goal Focused", description: "Personalized programs aligned with your specific fitness objectives."
-          },{
-            icon: <Dumbbell className="h-10 w-10 text-gold-500 mb-4" />, title: "Expert Guidance", description: "Professional coaching with certified personal training experience."
-          },{
-            icon: <Flame className="h-10 w-10 text-gold-500 mb-4" />, title: "Results Driven", description: "Proven methods to help you achieve your desired transformation."
-          }].map((feature, index) => (
-            <div key={index} className="bg-gray-900 p-6 rounded-sm text-center hover:bg-gray-800 transition-colors duration-300">
-              {feature.icon}
-              <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-              <p className="text-white/70">{feature.description}</p>
+            <div 
+              key={index}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <ProgramCard 
+                {...program} 
+                onLearnMore={(slug) => window.location.href = `/programs/${slug}`} 
+              />
             </div>
           ))}
         </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div 
+                key={index} 
+                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300 border border-white/10 hover:border-yellow-500/30 cursor-pointer overflow-hidden"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Icon container */}
+                <div className="relative z-10 mb-6">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-gray-800 to-gray-700 border border-white/20 group-hover:border-yellow-500/50 transition-all duration-300 group-hover:scale-110">
+                    <IconComponent className={`w-10 h-10 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-white/70 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">
+                  {feature.description}
+                </p>
+                
+                {/* Floating arrow */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowRight className="w-5 h-5 text-yellow-500" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      {/* {selectedProgram && <Modal selectedProgram={selectedProgram} onClose={() => setSelectedProgram(null)} />} */}
     </section>
   );
 };
