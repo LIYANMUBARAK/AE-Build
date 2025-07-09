@@ -53,8 +53,7 @@ const pricingPackages = [
     popular: true
   }
 ];
-
-const ProgramCard = ({ title, description, features, image, featured = false, onLearnMore }) => {
+const ProgramCard = ({ title, description, features, image, featured = false, slug, onLearnMore }) => {
   return (
     <div 
       className={`bg-gray-900 rounded-sm overflow-hidden transition-transform duration-300 hover:-translate-y-2 ${
@@ -85,7 +84,7 @@ const ProgramCard = ({ title, description, features, image, featured = false, on
           ))}
         </ul>
         <button
-          onClick={() => onLearnMore(title)}
+          onClick={() => onLearnMore(slug)}
           className={`block text-center w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
             featured 
               ? 'bg-gold-500 text-black hover:bg-gold-600' 
@@ -99,126 +98,129 @@ const ProgramCard = ({ title, description, features, image, featured = false, on
   );
 };
 
-const Modal = ({ selectedProgram, onClose }) => {
-  return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex justify-center items-center px-4">
-      <div className="bg-gray-900 text-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/30">
-        {/* Header */}
-        <div className="sticky top-0 bg-gray-900 border-b border-gold-500/30 p-6 z-10">
-          <div className="flex justify-between items-center">
-            <div>
-              <h2 className="text-2xl font-bold text-gold-500 mb-2">
-                {selectedProgram}
-              </h2>
-              <p className="text-white/70">Choose the perfect package for your fitness journey</p>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-white/50 hover:text-white transition-colors text-2xl"
-            >
-              ×
-            </button>
-          </div>
-        </div>
+// const Modal = ({ selectedProgram, onClose }) => {
+//   return (
+//     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex justify-center items-center px-4">
+//       <div className="bg-gray-900 text-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gold-500/30">
+//         {/* Header */}
+//         <div className="sticky top-0 bg-gray-900 border-b border-gold-500/30 p-6 z-10">
+//           <div className="flex justify-between items-center">
+//             <div>
+//               <h2 className="text-2xl font-bold text-gold-500 mb-2">
+//                 {selectedProgram}
+//               </h2>
+//               <p className="text-white/70">Choose the perfect package for your fitness journey</p>
+//             </div>
+//             <button
+//               onClick={onClose}
+//               className="text-white/50 hover:text-white transition-colors text-2xl"
+//             >
+//               ×
+//             </button>
+//           </div>
+//         </div>
 
-        {/* Packages Grid */}
-        <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pricingPackages.map((plan, index) => (
-              <div 
-                key={plan.name} 
-                className={`relative bg-gray-800 rounded-lg p-6 border transition-all duration-300 hover:scale-105 ${
-                  plan.popular 
-                    ? 'border-gold-500 shadow-lg shadow-gold-500/20' 
-                    : 'border-white/10 hover:border-white/20'
-                }`}
-              >
-                {/* Popular Badge */}
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-full">
-                      MOST POPULAR
-                    </div>
-                  </div>
-                )}
+//         {/* Packages Grid */}
+//         <div className="p-6">
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+//             {pricingPackages.map((plan, index) => (
+//               <div 
+//                 key={plan.name} 
+//                 className={`relative bg-gray-800 rounded-lg p-6 border transition-all duration-300 hover:scale-105 ${
+//                   plan.popular 
+//                     ? 'border-gold-500 shadow-lg shadow-gold-500/20' 
+//                     : 'border-white/10 hover:border-white/20'
+//                 }`}
+//               >
+//                 {/* Popular Badge */}
+//                 {plan.popular && (
+//                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+//                     <div className="bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-full">
+//                       MOST POPULAR
+//                     </div>
+//                   </div>
+//                 )}
 
-                {/* Package Header */}
-                <div className="text-center mb-6">
-                  <div className={`w-16 h-16 ${plan.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <span className="text-white font-bold text-lg">{plan.name[0]}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="text-2xl font-bold text-gold-500 mb-2">{plan.price}</div>
-                  <p className="text-white/60 text-sm italic">{plan.tagline}</p>
-                </div>
+//                 {/* Package Header */}
+//                 <div className="text-center mb-6">
+//                   <div className={`w-16 h-16 ${plan.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+//                     <span className="text-white font-bold text-lg">{plan.name[0]}</span>
+//                   </div>
+//                   <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+//                   <div className="text-2xl font-bold text-gold-500 mb-2">{plan.price}</div>
+//                   <p className="text-white/60 text-sm italic">{plan.tagline}</p>
+//                 </div>
 
-                {/* Description */}
-                <p className="text-white/80 text-sm mb-6 text-center">{plan.description}</p>
+//                 {/* Description */}
+//                 <p className="text-white/80 text-sm mb-6 text-center">{plan.description}</p>
 
-                {/* Features List */}
-                <div className="space-y-3 mb-6">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start">
-                      <CheckCircle className="text-gold-500 h-4 w-4 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-white/90 text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+//                 {/* Features List */}
+//                 <div className="space-y-3 mb-6">
+//                   {plan.features.map((feature, featureIndex) => (
+//                     <div key={featureIndex} className="flex items-start">
+//                       <CheckCircle className="text-gold-500 h-4 w-4 mr-3 mt-0.5 flex-shrink-0" />
+//                       <span className="text-white/90 text-sm">{feature}</span>
+//                     </div>
+//                   ))}
+//                 </div>
 
-                {/* CTA Button */}
-                <a
-                  href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                    `Hi, I'm interested in the ${selectedProgram} program with the ${plan.name} package (${plan.price}). Can you share more details?`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? 'bg-gold-500 text-black hover:bg-gold-600 shadow-lg hover:shadow-xl'
-                      : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
-                  }`}
-                >
-                  Get Started
-                </a>
-              </div>
-            ))}
-          </div>
+//                 {/* CTA Button */}
+//                 <a
+//                   href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+//                     `Hi, I'm interested in the ${selectedProgram} program with the ${plan.name} package (${plan.price}). Can you share more details?`
+//                   )}`}
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className={`block w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 ${
+//                     plan.popular
+//                       ? 'bg-gold-500 text-black hover:bg-gold-600 shadow-lg hover:shadow-xl'
+//                       : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+//                   }`}
+//                 >
+//                   Get Started
+//                 </a>
+// <a href={`/programs/${selectedProgram}`}>
+//   View Full Program Details →
+// </a>
+//               </div>
+//             ))}
+//           </div>
 
-          {/* Footer */}
-          <div className="mt-8 text-center">
-            <p className="text-white/60 text-sm mb-4">
-              Have questions? Need a custom package? Contact us directly.
-            </p>
-            <div className="flex justify-center space-x-4">
-              <a
-                href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                  `Hi, I'd like to know more about the ${selectedProgram} program and discuss my fitness goals.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
-              >
-                💬 Chat on WhatsApp
-              </a>
-              <button
-                onClick={onClose}
-                className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+//           {/* Footer */}
+//           <div className="mt-8 text-center">
+//             <p className="text-white/60 text-sm mb-4">
+//               Have questions? Need a custom package? Contact us directly.
+//             </p>
+//             <div className="flex justify-center space-x-4">
+//               <a
+//                 href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+//                   `Hi, I'd like to know more about the ${selectedProgram} program and discuss my fitness goals.`
+//                 )}`}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
+//               >
+//                 💬 Chat on WhatsApp
+//               </a>
+//               <button
+//                 onClick={onClose}
+//                 className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg transition-colors"
+//               >
+//                 Close
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Programs = () => {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   const programs = [
-    {
+    { slug: 'strength-conditioning',
       title: "Strength & Conditioning",
       description: "Build lean muscle and increase your strength with progressive resistance training.",
       features: [
@@ -230,6 +232,7 @@ const Programs = () => {
       image: "https://images.pexels.com/photos/2261485/pexels-photo-2261485.jpeg"
     },
     {
+      slug: 'fat-loss',
       title: "Fat Loss",
       description: "Transform your body composition with targeted fat loss programming.",
       features: [
@@ -241,6 +244,7 @@ const Programs = () => {
       image: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
     },
     {
+        slug: 'hybrid-hyrox-training',
       title: "Hybrid / HYROX Training",
       description: "A training program that combines endurance, strength, and functional movement into one powerful system.",
       features: [
@@ -267,7 +271,8 @@ const Programs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <ProgramCard key={index} {...program} onLearnMore={setSelectedProgram} />
+<ProgramCard key={index} {...program} onLearnMore={(slug) => window.location.href = `/programs/${slug}`} />
+
           ))}
         </div>
 
@@ -289,7 +294,7 @@ const Programs = () => {
           ))}
         </div>
       </div>
-      {selectedProgram && <Modal selectedProgram={selectedProgram} onClose={() => setSelectedProgram(null)} />}
+      {/* {selectedProgram && <Modal selectedProgram={selectedProgram} onClose={() => setSelectedProgram(null)} />} */}
     </section>
   );
 };
