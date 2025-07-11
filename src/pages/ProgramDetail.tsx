@@ -73,14 +73,55 @@ const programDetails: Record<string, any> = {
       'Periodization planning for peak performance'
     ],
     target: ['Beginners looking to build foundation', 'Intermediate lifters breaking plateaus', 'Athletes seeking strength gains'],
-    schedule: [
-      'Monday: Upper Body Power - Focus on compound pressing and pulling movements',
-      'Tuesday: Lower Body Strength - Squats, deadlifts, and unilateral work',
-      'Wednesday: Active Recovery - Mobility, light cardio, and movement prep',
-      'Thursday: Upper Body Hypertrophy - Volume-focused muscle building',
-      'Friday: Lower Body Power - Explosive movements and athletic development',
-      'Saturday: Full Body Integration - Compound movements and conditioning',
-      'Sunday: Complete Rest'
+    phases: [
+      {
+        name: 'Foundation Phase',
+        duration: 'Weeks 1-3',
+        description: 'Movement pattern establishment, form mastery, and baseline strength development'
+      },
+      {
+        name: 'Strength Building',
+        duration: 'Weeks 4-8',
+        description: 'Progressive overload implementation with increased intensity and volume'
+      },
+      {
+        name: 'Power Development',
+        duration: 'Weeks 9-12',
+        description: 'Explosive movement integration and peak strength optimization'
+      }
+    ],
+    frequency: [
+      '4-6 training sessions per week',
+      '60-90 minutes per session',
+      '2-3 upper body focused days',
+      '2-3 lower body focused days',
+      '1-2 full body integration days',
+      '1-2 active recovery days'
+    ],
+    features: [
+      'Detailed exercise progressions',
+      'Video demonstrations included',
+      'Weekly progress tracking',
+      'Customizable based on equipment',
+      'Form check support',
+      'Nutrition guidance included'
+    ],
+    progression: [
+      {
+        weeks: '1-3',
+        focus: 'Foundation Building',
+        description: 'Master fundamental movement patterns and establish proper form with moderate intensity'
+      },
+      {
+        weeks: '4-8',
+        focus: 'Strength Development',
+        description: 'Systematic load progression with increased training volume and intensity'
+      },
+      {
+        weeks: '9-12',
+        focus: 'Power & Performance',
+        description: 'Peak strength expression and explosive movement integration'
+      }
     ],
     stats: { difficulty: 'Intermediate', duration: '8-12 weeks', intensity: 'High' },
     color: 'from-blue-600 to-purple-700',
@@ -103,14 +144,55 @@ const programDetails: Record<string, any> = {
       'Sustainable lifestyle habit formation'
     ],
     target: ['Individuals with weight loss goals', 'Busy professionals seeking efficiency', 'Those wanting body recomposition'],
-    schedule: [
-      'Monday: HIIT Training - High-intensity intervals with recovery periods',
-      'Tuesday: Metabolic Resistance - Circuit training with weights',
-      'Wednesday: Active Recovery - Low-intensity cardio and mobility',
-      'Thursday: Cardio + Core - Endurance work with core strengthening',
-      'Friday: Full Body Metabolic - Compound movements with minimal rest',
-      'Saturday: Outdoor Activity - Hiking, cycling, or sports',
-      'Sunday: Rest and Meal Prep'
+    phases: [
+      {
+        name: 'Metabolic Activation',
+        duration: 'Weeks 1-2',
+        description: 'Kickstart metabolism with high-intensity circuits and establish nutrition habits'
+      },
+      {
+        name: 'Fat Burning Phase',
+        duration: 'Weeks 3-6',
+        description: 'Maximize calorie burn through varied training modalities and strict nutrition'
+      },
+      {
+        name: 'Body Recomposition',
+        duration: 'Weeks 7-8',
+        description: 'Fine-tune physique with targeted training and advanced nutrition strategies'
+      }
+    ],
+    frequency: [
+      '5-6 training sessions per week',
+      '45-60 minutes per session',
+      '3-4 HIIT/metabolic sessions',
+      '2-3 strength training sessions',
+      '1-2 active recovery sessions',
+      'Daily nutrition tracking'
+    ],
+    features: [
+      'High-intensity interval protocols',
+      'Metabolic circuit training',
+      'Heart rate zone guidance',
+      'Comprehensive meal plans',
+      'Progress photo tracking',
+      'Weekly body composition analysis'
+    ],
+    progression: [
+      {
+        weeks: '1-2',
+        focus: 'Metabolic Kickstart',
+        description: 'Establish training rhythm and nutrition habits with moderate intensity'
+      },
+      {
+        weeks: '3-6',
+        focus: 'Maximum Fat Loss',
+        description: 'High-intensity training with strict nutrition for rapid fat loss'
+      },
+      {
+        weeks: '7-8',
+        focus: 'Body Recomposition',
+        description: 'Fine-tune physique with targeted training and metabolic optimization'
+      }
     ],
     stats: { difficulty: 'Beginner-Friendly', duration: '6-8 weeks', intensity: 'High' },
     color: 'from-orange-500 to-red-600',
@@ -133,14 +215,55 @@ const programDetails: Record<string, any> = {
       'Mental preparation and competition mindset development'
     ],
     target: ['HYROX competition athletes', 'Functional fitness enthusiasts', 'Athletes seeking comprehensive fitness'],
-    schedule: [
-      'Monday: Aerobic Base - Long, steady-state cardio for engine development',
-      'Tuesday: Strength Foundation - Compound movements and power development',
-      'Wednesday: HYROX Skills - Station-specific technique and efficiency work',
-      'Thursday: Recovery & Mobility - Active recovery with movement quality focus',
-      'Friday: Metabolic Conditioning - High-intensity intervals and lactate threshold work',
-      'Saturday: Race Simulation - Full or partial HYROX workout practice',
-      'Sunday: Complete Rest and Recovery'
+    phases: [
+      {
+        name: 'Base Building',
+        duration: 'Weeks 1-4',
+        description: 'Develop aerobic capacity and movement foundations with moderate intensity'
+      },
+      {
+        name: 'Strength Development',
+        duration: 'Weeks 5-10',
+        description: 'Build functional strength and power while maintaining endurance base'
+      },
+      {
+        name: 'Competition Prep',
+        duration: 'Weeks 11-16',
+        description: 'Race-specific training with full simulations and peak performance protocols'
+      }
+    ],
+    frequency: [
+      '6-7 training sessions per week',
+      '60-120 minutes per session',
+      '3-4 endurance focused sessions',
+      '2-3 strength training sessions',
+      '1-2 HYROX skill sessions',
+      '1 race simulation per week'
+    ],
+    features: [
+      'HYROX station-specific training',
+      'Aerobic base development',
+      'Functional strength protocols',
+      'Race pacing strategies',
+      'Recovery and mobility work',
+      'Mental preparation techniques'
+    ],
+    progression: [
+      {
+        weeks: '1-4',
+        focus: 'Aerobic Base Building',
+        description: 'Establish cardiovascular foundation and movement quality with steady-state training'
+      },
+      {
+        weeks: '5-10',
+        focus: 'Strength & Power',
+        description: 'Develop functional strength while maintaining aerobic capacity'
+      },
+      {
+        weeks: '11-16',
+        focus: 'Competition Readiness',
+        description: 'Race-specific preparation with full simulations and peak performance protocols'
+      }
     ],
     stats: { difficulty: 'Advanced', duration: '12-16 weeks', intensity: 'Extreme' },
     color: 'from-purple-600 to-indigo-700',
@@ -234,7 +357,7 @@ const ProgramDetail = () => {
       <div className="sticky top-0 bg-black/90 backdrop-blur-md border-b border-white/10 z-40">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex space-x-8">
-            {['overview', 'details', 'schedule', 'pricing'].map((tab) => (
+            {['overview', 'details', 'structure', 'pricing'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -244,7 +367,7 @@ const ProgramDetail = () => {
                     : 'text-gray-400 border-transparent hover:text-white'
                 }`}
               >
-                {tab}
+                {tab === 'structure' ? 'Program Structure' : tab}
               </button>
             ))}
           </div>
@@ -256,7 +379,7 @@ const ProgramDetail = () => {
         {activeTab === 'overview' && (
           <div className="space-y-12 animate-fadeIn">
             {/* Program Description */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <BookOpen className="w-8 h-8 text-yellow-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Program Overview</h2>
@@ -265,14 +388,14 @@ const ProgramDetail = () => {
             </div>
 
             {/* Benefits Section */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <Award className="w-8 h-8 text-yellow-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Key Benefits</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {data.benefits.map((benefit: string, i: number) => (
-                  <div key={i} className="flex items-start space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+                  <div key={i} className="flex items-start space-x-3 p-4 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
                     <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
                       {i + 1}
                     </div>
@@ -285,14 +408,14 @@ const ProgramDetail = () => {
             </div>
 
             {/* Target Audience */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <Users className="w-8 h-8 text-yellow-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Perfect For</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {data.target.map((target: string, i: number) => (
-                  <div key={i} className="text-center p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/10 hover:from-white/10 hover:to-white/5 transition-all duration-300 transform hover:scale-105">
+                  <div key={i} className="text-center p-6 rounded-xl bg-gradient-to-br from-black/40 to-gray-900/40 hover:from-black/60 hover:to-gray-800/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
                     <div className="text-4xl mb-4">
                       {i === 0 ? '🎯' : i === 1 ? '🏆' : '💪'}
                     </div>
@@ -308,7 +431,7 @@ const ProgramDetail = () => {
         {activeTab === 'details' && (
           <div className="space-y-12 animate-fadeIn">
             {/* Methodology */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <Activity className="w-8 h-8 text-yellow-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Training Methodology</h2>
@@ -317,7 +440,7 @@ const ProgramDetail = () => {
             </div>
 
             {/* Expected Results */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <TrendingUp className="w-8 h-8 text-yellow-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Expected Results</h2>
@@ -327,7 +450,7 @@ const ProgramDetail = () => {
 
             {/* Equipment & Nutrition */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+              <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
                 <div className="flex items-center mb-6">
                   <Dumbbell className="w-8 h-8 text-yellow-400 mr-3" />
                   <h2 className="text-2xl font-bold text-white">Equipment</h2>
@@ -335,7 +458,7 @@ const ProgramDetail = () => {
                 <p className="text-gray-300 leading-relaxed">{data.equipment}</p>
               </div>
               
-              <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+              <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
                 <div className="flex items-center mb-6">
                   <Heart className="w-8 h-8 text-yellow-400 mr-3" />
                   <h2 className="text-2xl font-bold text-white">Nutrition</h2>
@@ -346,29 +469,78 @@ const ProgramDetail = () => {
           </div>
         )}
 
-        {/* Schedule Tab */}
-        {activeTab === 'schedule' && (
-          <div className="animate-fadeIn">
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+        {/* Program Structure Tab */}
+        {activeTab === 'structure' && (
+          <div className="space-y-12 animate-fadeIn">
+            {/* Training Phases */}
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
                 <Calendar className="w-8 h-8 text-yellow-400 mr-3" />
-                <h2 className="text-3xl font-bold text-white">Weekly Schedule</h2>
+                <h2 className="text-3xl font-bold text-white">Training Phases</h2>
               </div>
-              <div className="space-y-4">
-                {data.schedule.map((day: string, i: number) => (
-                  <div key={i} className="flex items-start p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-black font-bold mr-4 flex-shrink-0 ${
-                      day.includes('Rest') ? 'bg-gray-400' : 'bg-gradient-to-r from-yellow-400 to-orange-500'
-                    }`}>
-                      {day.includes('Rest') ? '😴' : day.includes('Recovery') ? '🧘' : '💪'}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {data.phases.map((phase: any, i: number) => (
+                  <div key={i} className="p-6 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold mr-3">
+                        {i + 1}
+                      </div>
+                      <h3 className="text-xl font-bold text-white">{phase.name}</h3>
+                    </div>
+                    <p className="text-gray-400 text-sm mb-2">{phase.duration}</p>
+                    <p className="text-gray-300">{phase.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Training Frequency */}
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+              <div className="flex items-center mb-6">
+                <Activity className="w-8 h-8 text-yellow-400 mr-3" />
+                <h2 className="text-3xl font-bold text-white">Training Frequency</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4">Weekly Structure</h3>
+                  <div className="space-y-3">
+                    {data.frequency.map((item: string, i: number) => (
+                      <div key={i} className="flex items-center p-3 rounded-lg bg-black/40 border border-white/5">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        <span className="text-gray-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4">Program Features</h3>
+                  <div className="space-y-3">
+                    {data.features.map((feature: string, i: number) => (
+                      <div key={i} className="flex items-center p-3 rounded-lg bg-black/40 border border-white/5">
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Program Progression */}
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+              <div className="flex items-center mb-6">
+                <TrendingUp className="w-8 h-8 text-yellow-400 mr-3" />
+                <h2 className="text-3xl font-bold text-white">Program Progression</h2>
+              </div>
+              <div className="space-y-6">
+                {data.progression.map((stage: any, i: number) => (
+                  <div key={i} className="flex items-start p-4 rounded-xl bg-black/40 border border-white/5">
+                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold mr-4 flex-shrink-0">
+                      {stage.weeks}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-white text-lg mb-1">
-                        {day.split(' - ')[0]}
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        {day.split(' - ')[1] || 'Optimized for maximum results'}
-                      </p>
+                      <h3 className="font-semibold text-white text-lg mb-1">{stage.focus}</h3>
+                      <p className="text-gray-400 text-sm">{stage.description}</p>
                     </div>
                   </div>
                 ))}
@@ -389,7 +561,7 @@ const ProgramDetail = () => {
               {pricingPackages.map((plan, i) => (
                 <div
                   key={i}
-                  className={`relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-md rounded-3xl p-8 border transition-all duration-500 transform hover:scale-105 ${
+                  className={`relative bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border transition-all duration-500 transform hover:scale-105 ${
                     plan.popular 
                       ? 'border-yellow-400 shadow-2xl shadow-yellow-400/20' 
                       : 'border-white/10 hover:border-white/20'
@@ -427,7 +599,7 @@ const ProgramDetail = () => {
                     className={`block text-center font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 ${
                       plan.popular 
                         ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black hover:from-yellow-500 hover:to-orange-600' 
-                        : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white hover:from-gray-500 hover:to-gray-600'
+                        : 'bg-gradient-to-r from-gray-700 to-black text-white hover:from-gray-600 hover:to-gray-900'
                     }`}
                     target="_blank"
                     rel="noopener noreferrer"
