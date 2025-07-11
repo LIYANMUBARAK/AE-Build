@@ -1,9 +1,11 @@
 //components/About.tsx
 import React from 'react';
 import trainingImg1 from './shared/assets/images/1.jpg'
-import trainingImg2 from './shared/assets/images/2.jpg'
+import trainingImg2 from './shared/assets/images/2.jpeg'
 import trainingImg3 from './shared/assets/images/3.jpeg'
 import trainingImg4 from './shared/assets/images/4.jpeg'
+import trainingImg5 from './shared/assets/images/pull.jpeg'
+
 
 
 const About = () => {
@@ -64,7 +66,7 @@ const About = () => {
             <div className="space-y-4 mt-8">
               <div className="overflow-hidden rounded-sm h-64">
                 <img 
-                  src={trainingImg4}
+                  src={trainingImg5}
                   alt="Training session" 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                 />

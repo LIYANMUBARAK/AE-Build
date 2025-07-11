@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle, Clock, Flame, Trophy, Target, Dumbbell, Zap, Star, ArrowRight, ChevronRight } from 'lucide-react';
+import hyrox from './shared/assets/images/hyrox3rd.jpg'
 
 const phoneNumber = "971565974353";
 
@@ -166,6 +167,20 @@ const Programs: React.FC = () => {
   const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
 
   const programs = [
+     {
+      slug: 'hybrid-hyrox-training',
+      title: "Hybrid / HYROX Training",
+      description: "A training program that combines endurance, strength, and functional movement into one powerful system.",
+      features: [
+        "Endurance (Engine Work)",
+        "Strength & Power",
+        "MetCon (Conditioning)",
+        "Movement Skills",
+        "Recovery & Resilience"
+      ],
+      image: hyrox,
+      featured: true
+    },
     { 
       slug: 'strength-conditioning',
       title: "Strength & Conditioning",
@@ -188,50 +203,39 @@ const Programs: React.FC = () => {
         "Nutritional support",
         "Progress tracking"
       ],
-      image: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+      image: " https://images.pexels.com/photos/4720796/pexels-photo-4720796.jpeg"
+
+
     },
-    {
-      slug: 'hybrid-hyrox-training',
-      title: "Hybrid / HYROX Training",
-      description: "A training program that combines endurance, strength, and functional movement into one powerful system.",
-      features: [
-        "Endurance (Engine Work)",
-        "Strength & Power",
-        "MetCon (Conditioning)",
-        "Movement Skills",
-        "Recovery & Resilience"
-      ],
-      image: "https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg",
-      featured: true
-    },
+   
   ];
 
-  const features = [
-    {
-      icon: Trophy,
-      title: "HYROX Ready",
-      description: "Specialized training to prepare you for HYROX competition success.",
-      color: "text-yellow-500"
-    },
-    {
-      icon: Target,
-      title: "Goal Focused",
-      description: "Personalized programs aligned with your specific fitness objectives.",
-      color: "text-blue-500"
-    },
-    {
-      icon: Dumbbell,
-      title: "Expert Guidance",
-      description: "Professional coaching with certified personal training experience.",
-      color: "text-green-500"
-    },
-    {
-      icon: Flame,
-      title: "Results Driven",
-      description: "Proven methods to help you achieve your desired transformation.",
-      color: "text-red-500"
-    }
-  ];
+  // const features = [
+  //   {
+  //     icon: Trophy,
+  //     title: "HYROX Ready",
+  //     description: "Specialized training to prepare you for HYROX competition success.",
+  //     color: "text-yellow-500"
+  //   },
+  //   {
+  //     icon: Target,
+  //     title: "Goal Focused",
+  //     description: "Personalized programs aligned with your specific fitness objectives.",
+  //     color: "text-blue-500"
+  //   },
+  //   {
+  //     icon: Dumbbell,
+  //     title: "Expert Guidance",
+  //     description: "Professional coaching with certified personal training experience.",
+  //     color: "text-green-500"
+  //   },
+  //   {
+  //     icon: Flame,
+  //     title: "Results Driven",
+  //     description: "Proven methods to help you achieve your desired transformation.",
+  //     color: "text-red-500"
+  //   }
+  // ];
 
   return (
     <section id="programs" className="relative py-20 bg-black overflow-hidden">
@@ -277,42 +281,7 @@ const Programs: React.FC = () => {
           ))}
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div 
-                key={index} 
-                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300 border border-white/10 hover:border-yellow-500/30 cursor-pointer overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* Animated background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Icon container */}
-                <div className="relative z-10 mb-6">
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-gray-800 to-gray-700 border border-white/20 group-hover:border-yellow-500/50 transition-all duration-300 group-hover:scale-110">
-                    <IconComponent className={`w-10 h-10 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-white/70 group-hover:text-white/90 transition-colors duration-300 leading-relaxed">
-                  {feature.description}
-                </p>
-                
-                {/* Floating arrow */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowRight className="w-5 h-5 text-yellow-500" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+     
       </div>
     </section>
   );
