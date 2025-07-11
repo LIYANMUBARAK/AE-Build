@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="flex items-center group">
               <div className="relative">
                 <Dumbbell className="text-yellow-400 h-10 w-10 mr-3 transform group-hover:rotate-12 transition-transform duration-300" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div> */}
               </div>
               <span className="text-white font-bold text-2xl">
                 AE<span className="text-yellow-400">BUILD</span>
@@ -210,9 +210,9 @@ const Footer = () => {
         </div>
       </div>
       
-      {/* Floating Elements */}
+      {/* Floating Elements
       <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-400/5 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-orange-500/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-orange-500/5 rounded-full blur-xl animate-pulse delay-1000"></div> */}
     </footer>
   );
 };
