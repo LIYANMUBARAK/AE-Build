@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CheckCircle, Target, Clock, Users, Star, Zap, Award, TrendingUp, ArrowRight, Play, Calendar, Heart, Dumbbell, Trophy, Activity, BookOpen, MessageCircle } from 'lucide-react';
+import Header from '../components/Header';
 
 const phoneNumber = "971565974353";
 
@@ -173,8 +174,10 @@ const ProgramDetail = () => {
   }
 
   return (
+        
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white min-h-screen">
       {/* Hero Section with Parallax Effect */}
+        <Header />
       <div className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-20"></div>
