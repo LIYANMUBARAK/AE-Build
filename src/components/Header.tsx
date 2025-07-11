@@ -22,9 +22,9 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Programs', href: '#programs' },
     { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Blog', href: '#blog' },
+    // { name: 'Testimonials', href: '#testimonials' },
+    // { name: 'Pricing', href: '#pricing' },
+    // { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -45,9 +45,11 @@ const Header = () => {
               {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div> */}
               {/* <Zap className="absolute -bottom-1 -left-1 w-4 h-4 text-orange-400 animate-pulse delay-500" /> */}
             </div>
+            <a href = '/'>
             <span className="text-white font-bold text-2xl transition-all duration-300 group-hover:scale-105">
               AE<span className="text-yellow-400">BUILD</span>
             </span>
+            </a>
           </div>
           
           {/* Desktop Navigation */}
@@ -64,10 +66,10 @@ const Header = () => {
             ))}
             
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center group">
-                <span>Book Now</span>
+              <a href="/#contact" className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-full font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center group">
+              <span>Book Now</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              </a>
             </div>
           </nav>
 

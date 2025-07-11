@@ -163,7 +163,7 @@ const ProgramDetail = () => {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
         <div className="text-center">
           <div className="text-6xl mb-4">🏃‍♂️</div>
           <p className="text-2xl font-bold">Program not found</p>
@@ -175,7 +175,7 @@ const ProgramDetail = () => {
 
   return (
         
-    <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen">
       {/* Hero Section with Parallax Effect */}
         <Header />
       <div className="relative h-[70vh] overflow-hidden">
