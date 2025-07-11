@@ -10,8 +10,8 @@ interface StatItem {
 
 const Hero: React.FC = () => {
   const stats: StatItem[] = [
-    { value: '6+', label: 'Years Experience', icon: Clock },
-    { value: '50+', label: 'Clients Trained', icon: Users },
+    { value: '8+', label: 'Years Experience', icon: Clock },
+    { value: '70+', label: 'Clients Trained', icon: Users },
     // { value: '15k+', label: 'Training Hours', icon: Zap },
         {value: "24/7", label: 'Nutrition Guidance', icon: Apple},
 
