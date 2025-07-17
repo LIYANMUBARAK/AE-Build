@@ -12,10 +12,10 @@ const Hero: React.FC = () => {
   const stats: StatItem[] = [
     { value: '8+', label: 'Years Experience', icon: Clock },
     { value: '70+', label: 'Clients Trained', icon: Users },
-    // { value: '15k+', label: 'Training Hours', icon: Zap },
+    { value: '15k+', label: 'Training Hours', icon: Zap },
         {value: "24/7", label: 'Nutrition Guidance', icon: Apple},
 
-    { value: '100%', label: 'Dedication', icon: Trophy },
+    // { value: '100%', label: 'Dedication', icon: Trophy },
   ];
 
   return (

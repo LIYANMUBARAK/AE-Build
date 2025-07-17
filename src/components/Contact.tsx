@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Zap, CheckCircle } from 'lucide-react';
 
+const phoneNumber = "971565974353";
+
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -251,10 +254,12 @@ const Contact = () => {
                   ))}
                 </div>
                 
-                <button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
+                <a                     href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hi, I'm interested in booking a FREE CONSULTATION session. Could you please share more details?`)}`}
+
+                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
                   <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   Book Free Consultation
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -19,13 +19,13 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Programs', href: '#programs' },
-    { name: 'About', href: '#about' },
+    { name: 'Home', href: '/#home' },
+    { name: 'Programs', href: '/#programs' },
+    { name: 'About', href: '/#about' },
     // { name: 'Testimonials', href: '#testimonials' },
     // { name: 'Pricing', href: '#pricing' },
     // { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '/#contact' }
   ];
 
   return (
