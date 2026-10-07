@@ -7,7 +7,7 @@ import Header from '../components/Header';
 const pricingPackages = [
   {
     name: "Gold",
-    price: "From AED 475/month",
+    price: "From AED 575/month",
     tagline: "Structured online coaching to build momentum.",
     description: "Custom training plan, goal-based programming, and nutrition guidance with regular WhatsApp check-ins.",
     features: [
@@ -22,7 +22,7 @@ const pricingPackages = [
   },
   {
     name: "Platinum",
-    price: "From AED 800/month",
+    price: "From AED 900/month",
     tagline: "Full performance coaching with daily support.",
     description: "Everything in Gold plus weekly 1:1 feedback, video form reviews, and daily coach access.",
     features: [

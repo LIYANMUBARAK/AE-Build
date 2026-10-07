@@ -25,10 +25,10 @@ const tiers: Tier[] = [
     name: "Gold",
     tagline: "Structured online coaching to build momentum.",
     durations: [
-      { duration: "1 month", months: 1, total: 599, perMonth: 599, save: null },
-      { duration: "2 months", months: 2, total: 1099, perMonth: 550, save: 99 },
-      { duration: "4 months", months: 4, total: 2099, perMonth: 525, save: 297 },
-      { duration: "8 months", months: 8, total: 3799, perMonth: 475, save: 993 },
+      { duration: "1 month", months: 1, total: 699, perMonth: 699, save: null },
+      { duration: "2 months", months: 2, total: 1299, perMonth: 650, save: 99 },
+      { duration: "4 months", months: 4, total: 2499, perMonth: 625, save: 297 },
+      { duration: "8 months", months: 8, total: 4599, perMonth: 575, save: 993 },
     ],
     features: [
       "Custom training plan",
@@ -41,10 +41,10 @@ const tiers: Tier[] = [
     name: "Platinum",
     tagline: "Full performance coaching with daily support.",
     durations: [
-      { duration: "1 month", months: 1, total: 999, perMonth: 999, save: null },
-      { duration: "2 months", months: 2, total: 1849, perMonth: 925, save: 149 },
-      { duration: "4 months", months: 4, total: 3499, perMonth: 875, save: 497 },
-      { duration: "8 months", months: 8, total: 6399, perMonth: 800, save: 1593 },
+      { duration: "1 month", months: 1, total: 1099, perMonth: 1099, save: null },
+      { duration: "2 months", months: 2, total: 2049, perMonth: 1025, save: 149 },
+      { duration: "4 months", months: 4, total: 3899, perMonth: 975, save: 497 },
+      { duration: "8 months", months: 8, total: 7199, perMonth: 900, save: 1593 },
     ],
     features: [
       "Everything in Gold",
