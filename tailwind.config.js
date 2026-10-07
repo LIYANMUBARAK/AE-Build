@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         hyrox: {
-          50: '#FFE5E8',
-          100: '#FFB8C0',
-          200: '#FF8A96',
-          300: '#FA5C6C',
-          400: '#F02338',
-          500: '#E4002B', // Primary HYROX red
-          600: '#BE0024',
-          700: '#97001D',
-          800: '#710015',
-          900: '#4A000E',
+          50: '#FFFFFF',
+          100: '#FAFAFA',
+          200: '#F5F5F5',
+          300: '#EEEEEE',
+          400: '#E5E5E5',
+          500: '#FFFFFF', // Primary accent (HYROX-style black & white)
+          600: '#D4D4D4',
+          700: '#A3A3A3',
+          800: '#737373',
+          900: '#404040',
         },
         black: {
           DEFAULT: '#000000',

@@ -20,7 +20,7 @@ const Header = () => {
 
   const navigationItems = [
     { name: 'Home', href: '/#home' },
-    { name: 'Programs', href: '/#pricing' },
+    { name: 'Programs', href: '/#programs' },
     { name: 'Pricing', href: '/#pricing' },
     { name: 'About', href: '/#about' },
     { name: 'Contact', href: '/#contact' }
@@ -62,7 +62,7 @@ const Header = () => {
             ))}
 
             <div className="flex items-center space-x-4">
-              <a href="/apply" className="bg-hyrox-500 text-white px-6 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300 flex items-center group border-2 border-hyrox-500">
+              <a href="/apply" className="bg-hyrox-500 text-black px-6 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300 flex items-center group border-2 border-hyrox-500">
               <span>Book Now</span>
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
@@ -102,7 +102,7 @@ const Header = () => {
               <div className="pt-4 border-t border-white/10">
                 <a
                   href="/apply"
-                  className="w-full bg-hyrox-500 text-white px-6 py-3 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300 flex items-center justify-center group"
+                  className="w-full bg-hyrox-500 text-black px-6 py-3 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300 flex items-center justify-center group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Book Now

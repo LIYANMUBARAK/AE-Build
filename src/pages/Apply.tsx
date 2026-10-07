@@ -98,7 +98,7 @@ const SelectButton: React.FC<{
     onClick={onClick}
     className={`px-3 py-3 text-sm font-bold uppercase tracking-wide border-2 transition-all duration-200 text-left break-words ${
       active
-        ? 'bg-hyrox-500 border-hyrox-500 text-white'
+        ? 'bg-hyrox-500 border-hyrox-500 text-black'
         : 'border-white/15 text-white/70 hover:border-white/40 hover:text-white'
     }`}
   >
@@ -234,7 +234,7 @@ const Apply: React.FC = () => {
             </p>
             <a
               href="/"
-              className="inline-block mt-8 bg-hyrox-500 text-white px-8 py-3 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300"
+              className="inline-block mt-8 bg-hyrox-500 text-black px-8 py-3 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300"
             >
               Back to Home
             </a>
@@ -268,7 +268,7 @@ const Apply: React.FC = () => {
               <div className="flex flex-col items-center flex-shrink-0">
                 <div
                   className={`w-10 h-10 flex items-center justify-center font-display text-lg border-2 ${
-                    i <= step ? 'bg-hyrox-500 border-hyrox-500 text-white' : 'border-white/20 text-white/40'
+                    i <= step ? 'bg-hyrox-500 border-hyrox-500 text-black' : 'border-white/20 text-white/40'
                   }`}
                 >
                   {i + 1}
@@ -593,7 +593,7 @@ const Apply: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="flex items-center gap-2 bg-hyrox-500 text-white px-8 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300"
+                className="flex items-center gap-2 bg-hyrox-500 text-black px-8 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300"
               >
                 Next
                 <ChevronRight className="w-4 h-4" />
@@ -603,7 +603,7 @@ const Apply: React.FC = () => {
                 type="button"
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="flex items-center gap-2 bg-hyrox-500 text-white px-8 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 bg-hyrox-500 text-black px-8 py-3 font-bold uppercase tracking-wide text-sm hover:bg-hyrox-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? 'Sending...' : 'Submit Application'}
                 <CheckCircle className="w-4 h-4" />

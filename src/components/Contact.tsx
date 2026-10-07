@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Zap, CheckCircle } from 'lucide-react';
+import { MapPin, Mail, Clock, Send, MessageCircle, Zap, CheckCircle } from 'lucide-react';
 
-const phoneNumber = "971565974353";
 
 
 const ContactForm = () => {
@@ -45,15 +44,15 @@ const ContactForm = () => {
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center">
-            <MessageCircle className="w-5 h-5 text-white" />
+            <MessageCircle className="w-5 h-5 text-black" />
           </div>
           <h3 className="text-2xl font-bold text-white">Get In Touch</h3>
         </div>
         
         {isSubmitted ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-8 h-8 text-green-400" />
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <h4 className="text-xl font-bold text-white mb-2">Message Sent!</h4>
             <p className="text-gray-300">Thank you for reaching out. We'll get back to you within 24 hours.</p>
@@ -120,7 +119,7 @@ const ContactForm = () => {
             <button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-4 rounded-xl font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-black px-6 py-4 rounded-xl font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <div className="flex items-center">
@@ -144,12 +143,6 @@ const ContactForm = () => {
 const Contact = () => {
   const contactInfo = [
     {
-      icon: Phone,
-      title: "Phone Number",
-      content: "+971 56 597 4353",
-      subtext: "Available 24/7 for emergencies"
-    },
-    {
       icon: Mail,
       title: "Email Address",
       content: "info@aebuild.com",
@@ -159,7 +152,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Location",
       content: "Dubai, UAE",
-      subtext: "Available for in-person consultations"
+      subtext: "Online coaching worldwide"
     },
     {
       icon: Clock,
@@ -193,7 +186,7 @@ const Contact = () => {
           </h2>
           
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards your fitness goals. Whether you have questions about our programs or want to schedule a consultation, we're here to help you succeed.
+            Take the first step towards your fitness goals. Whether you have questions about our programs or want to get started, we're here to help you succeed.
           </p>
         </div>
 
@@ -216,7 +209,7 @@ const Contact = () => {
                   >
                     <div className="flex items-start">
                       <div className="w-12 h-12 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-6 h-6 text-white" />
+                        <IconComponent className="w-6 h-6 text-black" />
                       </div>
                       <div>
                         <h4 className="text-white font-bold text-lg mb-1">{info.title}</h4>
@@ -229,38 +222,6 @@ const Contact = () => {
               })}
             </div>
             
-            {/* Free Consultation CTA */}
-            <div className="bg-gradient-to-br from-hyrox-500/10 to-hyrox-600/10 rounded-2xl p-8 border border-hyrox-400/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-hyrox-500/5 to-transparent"></div>
-              <div className="absolute top-4 right-4 w-20 h-20 bg-hyrox-400/10 rounded-full blur-xl animate-pulse"></div>
-              
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-white mb-4">Free Consultation</h3>
-                <p className="text-white/80 mb-6 leading-relaxed">
-                  Ready to transform your fitness journey? Book a complimentary 30-minute consultation with our expert performance coach to discuss your goals and create a personalized plan.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  {[
-                    "Fitness assessment & goal setting",
-                    "Personalized program overview",
-                    "Nutrition guidance basics",
-                    "Q&A session with our coach"
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center">
-                      <CheckCircle className="text-hyrox-400 h-5 w-5 mr-3 flex-shrink-0" />
-                      <span className="text-white/80">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <a href="/apply"
-                className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-4 rounded-xl font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
-                  <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                  Book Free Consultation
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

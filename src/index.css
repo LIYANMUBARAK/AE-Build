@@ -13,5 +13,5 @@
 }
 
 ::selection {
-  @apply bg-hyrox-500 text-white;
+  @apply bg-white text-black;
 }

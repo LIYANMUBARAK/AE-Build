@@ -70,7 +70,7 @@ const PricingTier: React.FC<{ tier: Tier }> = ({ tier }) => {
       }`}
     >
       {tier.highlighted && (
-        <div className="bg-hyrox-500 text-white text-xs font-bold uppercase tracking-widest text-center py-2 flex items-center justify-center gap-1">
+        <div className="bg-hyrox-500 text-black text-xs font-bold uppercase tracking-widest text-center py-2 flex items-center justify-center gap-1">
           <Zap className="w-3 h-3" />
           Most Committed
         </div>
@@ -88,7 +88,7 @@ const PricingTier: React.FC<{ tier: Tier }> = ({ tier }) => {
               onClick={() => setSelected(i)}
               className={`relative py-2 text-xs font-bold uppercase tracking-wide transition-all duration-200 border-2 ${
                 selected === i
-                  ? 'bg-hyrox-500 border-hyrox-500 text-white'
+                  ? 'bg-hyrox-500 border-hyrox-500 text-black'
                   : 'border-white/15 text-white/60 hover:border-white/40 hover:text-white'
               }`}
             >
@@ -126,7 +126,7 @@ const PricingTier: React.FC<{ tier: Tier }> = ({ tier }) => {
           href="/apply"
           className={`block text-center w-full py-3 font-bold uppercase tracking-wide transition-colors duration-300 ${
             tier.highlighted
-              ? 'bg-hyrox-500 text-white hover:bg-hyrox-600'
+              ? 'bg-hyrox-500 text-black hover:bg-hyrox-600'
               : 'bg-white/10 text-white hover:bg-white/20'
           }`}
         >
@@ -158,13 +158,6 @@ const Pricing = () => {
           {tiers.map((tier) => (
             <PricingTier key={tier.name} tier={tier} />
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-white/60 mb-4">Not sure which plan fits your goals?</p>
-          <a href="/apply" className="text-hyrox-500 hover:underline font-bold uppercase tracking-wide text-sm">
-            Get a free consultation
-          </a>
         </div>
 
         <div className="mt-20 bg-gray-950 border border-white/10 p-8 max-w-3xl mx-auto">

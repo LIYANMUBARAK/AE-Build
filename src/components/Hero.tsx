@@ -11,7 +11,7 @@ interface StatItem {
 const Hero: React.FC = () => {
   const stats: StatItem[] = [
     { value: '8+', label: 'Years Experience', icon: Clock },
-    { value: '70+', label: 'Clients Trained', icon: Users },
+    { value: '400+', label: 'Clients Trained', icon: Users },
     { value: '15k+', label: 'Training Hours', icon: Zap },
         {value: "24/7", label: 'Nutrition Guidance', icon: Apple},
 
@@ -56,8 +56,8 @@ const Hero: React.FC = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <a
-              href="#pricing"
-              className="group relative bg-hyrox-500 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300 flex items-center justify-center border-2 border-hyrox-500"
+              href="#programs"
+              className="group relative bg-hyrox-500 text-black px-8 py-4 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300 flex items-center justify-center border-2 border-hyrox-500"
             >
               <span className="flex items-center">
                 View Programs
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
               href="/apply"
               className="group relative border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wide hover:text-black hover:bg-white transition-all duration-300 flex items-center justify-center"
             >
-              Free Consultation
+              Apply Now
             </a>
           </div>
 

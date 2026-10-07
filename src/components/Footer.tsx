@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Dumbbell, Mail, MapPin, Phone, Send, Heart } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Dumbbell, Mail, MapPin, Send, Heart } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black border-t border-hyrox-400/30">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-hyrox-400 via-hyrox-600 to-red-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-hyrox-400 via-hyrox-600 to-hyrox-800"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_2rem_4rem,rgba(255,255,255,0.1),transparent)] animate-pulse"></div>
       </div>
 
@@ -43,10 +43,10 @@ const Footer = () => {
             
             <div className="flex space-x-4">
               {[
-                { icon: <Facebook size={20} />, href: "#", color: "hover:bg-blue-600" },
-                { icon: <Instagram size={20} />, href: "#", color: "hover:bg-pink-600" },
-                { icon: <Twitter size={20} />, href: "#", color: "hover:bg-blue-400" },
-                { icon: <Youtube size={20} />, href: "#", color: "hover:bg-red-600" }
+                { icon: <Facebook size={20} />, href: "#", color: "hover:bg-white hover:text-black" },
+                { icon: <Instagram size={20} />, href: "#", color: "hover:bg-white hover:text-black" },
+                { icon: <Twitter size={20} />, href: "#", color: "hover:bg-white hover:text-black" },
+                { icon: <Youtube size={20} />, href: "#", color: "hover:bg-white hover:text-black" }
               ].map((social, index) => (
                 <a 
                   key={index} 
@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Home", href: "#home" },
-                { name: "Programs", href: "#pricing" },
+                { name: "Programs", href: "#programs" },
                 { name: "About Us", href: "#about" },
                 { name: "Testimonials", href: "#testimonials" },
                 { name: "Pricing", href: "#pricing" },
@@ -98,12 +98,12 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "Personal Training", href: "#pricing", icon: "🏋️" },
-                { name: "Group Fitness", href: "#pricing", icon: "👥" },
-                { name: "Nutrition Coaching", href: "#pricing", icon: "🥗" },
-                { name: "Weight Loss", href: "#pricing", icon: "⚖️" },
-                { name: "Strength & Conditioning", href: "#pricing", icon: "💪" },
-                { name: "HYROX Training", href: "#pricing", icon: "🏃" }
+                { name: "Personal Training", href: "#programs", icon: "🏋️" },
+                { name: "Group Fitness", href: "#programs", icon: "👥" },
+                { name: "Nutrition Coaching", href: "#programs", icon: "🥗" },
+                { name: "Weight Loss", href: "#programs", icon: "⚖️" },
+                { name: "Strength & Conditioning", href: "#programs", icon: "💪" },
+                { name: "HYROX Training", href: "#programs", icon: "🏃" }
               ].map((program, index) => (
                 <li key={index}>
                   <a 
@@ -145,7 +145,7 @@ const Footer = () => {
               
               <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-3 rounded-lg font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
+                className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-black px-6 py-3 rounded-lg font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
               >
                 <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                 Subscribe
@@ -153,8 +153,8 @@ const Footer = () => {
             </form>
             
             {isSubscribed && (
-              <div className="mt-4 p-3 bg-green-900/30 border border-green-400 rounded-lg text-green-400 text-sm flex items-center animate-fadeIn">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+              <div className="mt-4 p-3 bg-white/10 border border-white rounded-lg text-white text-sm flex items-center animate-fadeIn">
+                <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
                 Thank you for subscribing!
               </div>
             )}
@@ -167,20 +167,10 @@ const Footer = () => {
         
         {/* Contact Info Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-center text-gray-300">
               <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
-                <Phone className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="text-sm text-gray-400">Call Us</div>
-                <div className="font-semibold">+971 56 597 4353</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center text-gray-300">
-              <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
-                <Mail className="w-5 h-5 text-white" />
+                <Mail className="w-5 h-5 text-black" />
               </div>
               <div>
                 <div className="text-sm text-gray-400">Email Us</div>
@@ -190,7 +180,7 @@ const Footer = () => {
             
             <div className="flex items-center text-gray-300">
               <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
-                <MapPin className="w-5 h-5 text-white" />
+                <MapPin className="w-5 h-5 text-black" />
               </div>
               <div>
                 <div className="text-sm text-gray-400">Visit Us</div>
@@ -204,7 +194,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center">
             &copy; {new Date().getFullYear()} AE Build. Made with 
-            <Heart className="w-4 h-4 text-red-500 mx-1 animate-pulse" /> 
+            <Heart className="w-4 h-4 text-white mx-1 animate-pulse" /> 
             in Dubai. All rights reserved.
           </p>
         </div>

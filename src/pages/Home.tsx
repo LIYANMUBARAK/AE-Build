@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-// import Programs from '../components/Programs';
+import Programs from '../components/Programs';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
@@ -15,7 +15,7 @@ const Home = () => {
     <div className="min-h-screen bg-black text-white">
       <Header />
       <Hero />
-      {/* <Programs /> */}
+      <Programs />
       <Pricing />
       <About />
       {/* <Testimonials /> */}

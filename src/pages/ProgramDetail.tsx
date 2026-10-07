@@ -295,7 +295,7 @@ const ProgramDetail = () => {
         <div className="absolute inset-0 z-30 flex items-end px-6 pb-16">
           <div className={`max-w-4xl mx-auto w-full transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex items-center space-x-4 mb-6">
-              <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${data.color} flex items-center justify-center text-white font-bold text-2xl shadow-lg`}>
+              <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${data.color} flex items-center justify-center text-black font-bold text-2xl shadow-lg`}>
                 {data.title[0]}
               </div>
               <div>
@@ -377,7 +377,7 @@ const ProgramDetail = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {data.benefits.map((benefit: string, i: number) => (
                   <div key={i} className="flex items-start space-x-3 p-4 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
-                    <div className="w-8 h-8 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-8 h-8 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-black font-bold text-sm">
                       {i + 1}
                     </div>
                     <div>
@@ -463,7 +463,7 @@ const ProgramDetail = () => {
                 {data.phases.map((phase: any, i: number) => (
                   <div key={i} className="p-6 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-black font-bold mr-3">
                         {i + 1}
                       </div>
                       <h3 className="text-xl font-bold text-white">{phase.name}</h3>
@@ -516,7 +516,7 @@ const ProgramDetail = () => {
               <div className="space-y-6">
                 {data.progression.map((stage: any, i: number) => (
                   <div key={i} className="flex items-start p-4 rounded-xl bg-black/40 border border-white/5">
-                    <div className="w-12 h-12 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-black font-bold mr-4 flex-shrink-0">
                       {stage.weeks}
                     </div>
                     <div className="flex-1">
@@ -550,7 +550,7 @@ const ProgramDetail = () => {
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center">
+                      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-black px-6 py-2 rounded-full text-sm font-bold flex items-center">
                         <Star className="w-4 h-4 mr-1" />
                         Most Popular
                       </div>
@@ -569,7 +569,7 @@ const ProgramDetail = () => {
                   <div className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start">
-                        <CheckCircle className="text-green-400 w-5 h-5 mt-1 mr-3 flex-shrink-0" />
+                        <CheckCircle className="text-white w-5 h-5 mt-1 mr-3 flex-shrink-0" />
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -579,7 +579,7 @@ const ProgramDetail = () => {
                     href="/apply"
                     className={`block text-center font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white hover:from-hyrox-500 hover:to-hyrox-700' 
+                        ? 'bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-black hover:from-hyrox-500 hover:to-hyrox-700' 
                         : 'bg-gradient-to-r from-gray-700 to-black text-white hover:from-gray-600 hover:to-gray-900'
                     }`}
                   >
@@ -600,7 +600,7 @@ const ProgramDetail = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white py-16">
+      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-black py-16">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Fitness?</h2>
           <p className="text-xl mb-8 opacity-90">Join thousands of satisfied clients who have achieved their goals with our proven programs.</p>
