@@ -1,0 +1,7 @@
+# Show the sample client reviews on preview deploys only (for design approval).
+# Production does not set this, so the reviews section stays hidden there.
+[context.deploy-preview.environment]
+  VITE_SHOW_SAMPLE_REVIEWS = "true"
+
+[context.branch-deploy.environment]
+  VITE_SHOW_SAMPLE_REVIEWS = "true"

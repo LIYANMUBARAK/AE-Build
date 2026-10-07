@@ -3,7 +3,9 @@ import { ChevronLeft, ChevronRight, Quote, Star, Zap } from 'lucide-react';
 
 // SAMPLE reviews for previewing the design only — the names and quotes are made up.
 // Replace them with real client reviews (with the client's permission), then set SAMPLE_REVIEWS to false.
-// While SAMPLE_REVIEWS is true, this section only renders in `npm run dev` and is hidden in production builds.
+// While SAMPLE_REVIEWS is true, this section only renders in `npm run dev` and on Netlify preview deploys
+// (VITE_SHOW_SAMPLE_REVIEWS, set in netlify.toml). On production it is hidden unless the page is opened
+// with ?preview=reviews (for stakeholder review only — do not share that link publicly).
 const SAMPLE_REVIEWS = true;
 
 const reviews = [
@@ -63,7 +65,11 @@ const Testimonials: React.FC = () => {
     touchStartX.current = null;
   };
 
-  if (SAMPLE_REVIEWS && !import.meta.env.DEV) return null;
+  const previewRequested =
+    typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('preview') === 'reviews';
+  if (SAMPLE_REVIEWS && !import.meta.env.DEV && import.meta.env.VITE_SHOW_SAMPLE_REVIEWS !== 'true' && !previewRequested) {
+    return null;
+  }
 
   return (
     <section id="testimonials" className="py-20 bg-black">
