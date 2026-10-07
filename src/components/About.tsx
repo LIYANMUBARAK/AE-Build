@@ -2,9 +2,9 @@
 import React from 'react';
 import trainingImg1 from './shared/assets/images/1.jpg'
 import trainingImg2 from './shared/assets/images/2.jpeg'
-import trainingImg3 from './shared/assets/images/3.jpeg'
+import trainingImg3 from './shared/assets/images/3-web.jpg'
 import trainingImg4 from './shared/assets/images/4.jpeg'
-import trainingImg5 from './shared/assets/images/pull.jpeg'
+import trainingImg5 from './shared/assets/images/pull-web.jpg'
 
 
 

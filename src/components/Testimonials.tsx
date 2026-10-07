@@ -1,31 +1,39 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Star, Zap } from 'lucide-react';
 
-// Replace these placeholders with real client reviews (with the client's permission).
+// SAMPLE reviews for previewing the design only — the names and quotes are made up.
+// Replace them with real client reviews (with the client's permission), then set SAMPLE_REVIEWS to false.
+// While SAMPLE_REVIEWS is true, this section only renders in `npm run dev` and is hidden in production builds.
+const SAMPLE_REVIEWS = true;
+
 const reviews = [
   {
-    name: 'Client Name',
+    name: 'Omar R.',
     program: 'HYROX Race Preparation',
-    quote: 'Add a real client review here — what they achieved and what it was like training with Althaf.',
-    result: 'e.g. First HYROX finished in 1:25',
+    quote:
+      "I signed up three months out from my HYROX race with no idea how to pace it. Althaf built every week around my shifts, fixed my wall balls and sled technique, and kept my running honest. I crossed the line strong instead of just surviving.",
+    result: 'Completed HYROX in a good time',
   },
   {
-    name: 'Client Name',
+    name: 'Priya S.',
     program: 'Fat Loss & Body Transformation',
-    quote: 'Add a real client review here — what they achieved and what it was like training with Althaf.',
-    result: 'e.g. Lost 8 kg in 12 weeks',
+    quote:
+      "I'd tried every app and plan out there. What made the difference was the weekly check-ins — someone actually looking at my numbers and adjusting things. No crash dieting, and I still eat out with friends.",
+    result: 'Down 9 kg in 16 weeks',
   },
   {
-    name: 'Client Name',
+    name: 'Daniel M.',
     program: 'Muscle Building & Strength',
-    quote: 'Add a real client review here — what they achieved and what it was like training with Althaf.',
-    result: 'e.g. Deadlift up 40 kg',
+    quote:
+      "Clear program, clear progressions, and video feedback on every heavy lift. My lower back stopped hurting once my hinge was fixed, and my numbers have gone up every single block.",
+    result: 'Deadlift up 45 kg',
   },
   {
-    name: 'Client Name',
+    name: 'Layla A.',
     program: 'Running Performance',
-    quote: 'Add a real client review here — what they achieved and what it was like training with Althaf.',
-    result: 'e.g. 10K personal best by 6 minutes',
+    quote:
+      "I was stuck at the same 10K time for two years. Adding proper strength work and structured easy runs changed everything — I feel fresher and I'm finally running faster.",
+    result: '10K PB by 5 minutes',
   },
 ];
 
@@ -54,6 +62,8 @@ const Testimonials: React.FC = () => {
     if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
     touchStartX.current = null;
   };
+
+  if (SAMPLE_REVIEWS && !import.meta.env.DEV) return null;
 
   return (
     <section id="testimonials" className="py-20 bg-black">
