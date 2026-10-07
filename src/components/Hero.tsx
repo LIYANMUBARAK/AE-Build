@@ -35,15 +35,15 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 z-20 relative">
         <div className="max-w-4xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-500/30 px-4 py-2 rounded-full text-yellow-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-hyrox-500/20 border border-hyrox-500/40 px-4 py-2 text-hyrox-400 text-sm font-bold uppercase tracking-widest mb-6">
             <Zap className="w-4 h-4" />
             Elite Performance Coach
           </div>
 
           {/* Main heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display text-white leading-none mb-6">
             Transform Your Body,{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+            <span className="text-hyrox-500">
               Transform Your Life
             </span>
           </h1>
@@ -55,18 +55,18 @@ const Hero: React.FC = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <a 
-              href="#programs" 
-              className="group relative bg-gradient-to-r from-yellow-500 to-yellow-600 text-black px-8 py-4 rounded-xl font-bold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center"
+            <a
+              href="#pricing"
+              className="group relative bg-hyrox-500 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-hyrox-600 transition-all duration-300 flex items-center justify-center border-2 border-hyrox-500"
             >
               <span className="flex items-center">
-                View Programs 
+                View Programs
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </span>
             </a>
-            <a 
-              href="#contact" 
-              className="group relative border-2 border-yellow-500 text-white px-8 py-4 rounded-xl font-bold hover:text-black hover:bg-yellow-500 transition-all duration-300 flex items-center justify-center"
+            <a
+              href="/apply"
+              className="group relative border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wide hover:text-black hover:bg-white transition-all duration-300 flex items-center justify-center"
             >
               Free Consultation
             </a>
@@ -77,12 +77,12 @@ const Hero: React.FC = () => {
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-4">
-                    <IconComponent className="w-8 h-8 text-yellow-500" />
+                <div key={index} className="text-center border-l-2 border-hyrox-500/40 pl-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-hyrox-500/10 border border-hyrox-500/40 mb-4">
+                    <IconComponent className="w-7 h-7 text-hyrox-500" />
                   </div>
-                  <p className="text-yellow-500 text-3xl md:text-4xl font-black mb-2">{stat.value}</p>
-                  <p className="text-white/80 text-sm md:text-base font-medium">{stat.label}</p>
+                  <p className="text-white text-3xl md:text-4xl font-display mb-2">{stat.value}</p>
+                  <p className="text-white/60 text-xs md:text-sm font-semibold uppercase tracking-wide">{stat.label}</p>
                 </div>
               );
             })}
@@ -93,10 +93,10 @@ const Hero: React.FC = () => {
         {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
         <div className="relative">
-          <div className="h-16 w-10 rounded-full border-2 border-yellow-500/50 flex justify-center bg-black/20 backdrop-blur-sm">
-            <div className="h-3 w-3 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-full mt-3 animate-pulse"></div>
+          <div className="h-16 w-10 rounded-full border-2 border-hyrox-500/50 flex justify-center bg-black/20 backdrop-blur-sm">
+            <div className="h-3 w-3 bg-hyrox-500 rounded-full mt-3 animate-pulse"></div>
           </div>
-          <div className="absolute -top-2 -left-2 w-14 h-20 rounded-full border border-yellow-500/20 animate-pulse"></div>
+          <div className="absolute -top-2 -left-2 w-14 h-20 rounded-full border border-hyrox-500/20 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -4,56 +4,6 @@ import hyrox from './shared/assets/images/hyrox3rd.jpg'
 
 const phoneNumber = "971565974353";
 
-const pricingPackages = [
-  {
-    name: "Basic",
-    price: "99 AED/month",
-    tagline: "Start strong with a structured foundation.",
-    description: "Perfect for beginners who want to establish good fitness habits with professional guidance.",
-    features: [
-      "3 sessions/week",
-      "4-6 week PDF plan (goal-based)",
-      "Basic nutrition guide",
-      "WhatsApp onboarding + end check-in",
-      "No ongoing support/check-ins"
-    ],
-    color: "bg-green-600"
-  },
-  {
-    name: "Premium",
-    price: "249 AED/month",
-    tagline: "More structure, more accountability.",
-    description: "Ideal for those who want regular guidance and personalized nutrition support.",
-    features: [
-      "6 sessions/week",
-      "Plan adjusted to your gym/equipment & schedule",
-      "Personalized macros + food list",
-      "Weekly check-ins (WhatsApp)",
-      "1-2 video form reviews/week",
-      "Mid-plan adjustment if needed"
-    ],
-    color: "bg-yellow-600"
-  },
-  {
-    name: "Elite",
-    price: "499 AED/month",
-    tagline: "Complete coaching with full performance support.",
-    description: "Perfect for athletes, competitors, or those who want full structure and accountability.",
-    features: [
-      "Daily or unlimited sessions (HYROX prep, athlete split, or full custom)",
-      "Weekly updated plan based on results",
-      "Advanced nutrition (macro timing, food types, refeeds)",
-      "Weekly 1:1 feedback review (photos, weight, biofeedback)",
-      "Daily WhatsApp access (Mon-Sat)",
-      "2-3 video reviews/week",
-      "Supplement + recovery + peak week guidance",
-      "End-phase plan or race strategy"
-    ],
-    color: "bg-red-600",
-    popular: true
-  }
-];
-
 interface ProgramCardProps {
   title: string;
   description: string;
@@ -80,7 +30,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       {/* Featured badge - positioned outside the card */}
       {featured && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
-          <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
+          <div className="bg-gradient-to-r from-hyrox-500 to-hyrox-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1">
             <Star className="w-3 h-3" />
             MOST POPULAR
           </div>
@@ -90,14 +40,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       <div 
         className={`group relative bg-black rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer border border-gray-800 ${
           featured 
-            ? 'ring-2 ring-yellow-500 shadow-2xl shadow-yellow-500/20 mt-4' 
-            : 'hover:shadow-2xl hover:shadow-yellow-500/10'
+            ? 'ring-2 ring-hyrox-500 shadow-2xl shadow-hyrox-500/20 mt-4' 
+            : 'hover:shadow-2xl hover:shadow-hyrox-500/10'
         }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-hyrox-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         {/* Image container */}
         <div className="relative h-64 overflow-hidden">
@@ -111,15 +61,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           
           {/* Floating elements */}
           <div className="absolute top-4 right-4 w-12 h-12 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <Zap className="w-6 h-6 text-yellow-500" />
+            <Zap className="w-6 h-6 text-hyrox-500" />
           </div>
         </div>
         
         {/* Content */}
         <div className="p-8 relative z-10">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-            <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
+            <div className="w-2 h-2 bg-hyrox-500 rounded-full animate-pulse"></div>
+            <h3 className="text-2xl font-bold text-white group-hover:text-hyrox-400 transition-colors duration-300">
               {title}
             </h3>
           </div>
@@ -133,7 +83,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
                 key={index} 
                 className="flex items-start"
               >
-                <CheckCircle className="text-yellow-500 h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="text-hyrox-500 h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
                 <span className="text-white/80">
                   {feature}
                 </span>
@@ -146,7 +96,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
             onClick={() => onLearnMore(slug)}
             className={`group/btn relative w-full py-4 font-bold rounded-xl transition-all duration-300 overflow-hidden ${
               featured 
-                ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-black hover:from-yellow-600 hover:to-yellow-700 shadow-lg hover:shadow-xl' 
+                ? 'bg-gradient-to-r from-hyrox-500 to-hyrox-700 text-white hover:from-hyrox-600 hover:to-hyrox-800 shadow-lg hover:shadow-xl'
                 : 'bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-white/40'
             }`}
           >
@@ -215,7 +165,7 @@ const Programs: React.FC = () => {
   //     icon: Trophy,
   //     title: "HYROX Ready",
   //     description: "Specialized training to prepare you for HYROX competition success.",
-  //     color: "text-yellow-500"
+  //     color: "text-hyrox-500"
   //   },
   //   {
   //     icon: Target,
@@ -241,21 +191,21 @@ const Programs: React.FC = () => {
     <section id="programs" className="relative py-20 bg-black overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-hyrox-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 px-4 py-2 rounded-full text-yellow-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-hyrox-500/20 backdrop-blur-sm border border-hyrox-500/30 px-4 py-2 rounded-full text-hyrox-400 text-sm font-medium mb-6">
             <Trophy className="w-4 h-4" />
             Premium Training Programs
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Transformational{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-hyrox-400 to-hyrox-600">
               Programs
             </span>
           </h2>

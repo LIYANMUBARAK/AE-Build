@@ -20,7 +20,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, excerpt, image, author, date
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute top-4 left-4 bg-gold-500 text-black text-xs font-bold px-3 py-1 rounded-sm">
+        <div className="absolute top-4 left-4 bg-hyrox-500 text-black text-xs font-bold px-3 py-1 rounded-sm">
           {category}
         </div>
       </div>
@@ -35,13 +35,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, excerpt, image, author, date
             <span>{author}</span>
           </div>
         </div>
-        <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-gold-500 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-hyrox-500 transition-colors duration-300">
           {title}
         </h3>
         <p className="text-white/70 mb-4 line-clamp-3">
           {excerpt}
         </p>
-        <div className="flex items-center text-gold-500 font-medium hover:text-gold-400 transition-colors duration-300 group-hover:translate-x-1">
+        <div className="flex items-center text-hyrox-500 font-medium hover:text-hyrox-400 transition-colors duration-300 group-hover:translate-x-1">
           <span>Read More</span>
           <ArrowRight size={16} className="ml-2" />
         </div>
@@ -82,7 +82,7 @@ const Blog = () => {
     <section id="blog" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Fitness <span className="text-gold-500">Insights</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Fitness <span className="text-hyrox-500">Insights</span></h2>
           <p className="text-white/70 max-w-2xl mx-auto">
             Stay updated with the latest fitness tips, trends, and expert advice from our elite trainers.
           </p>
@@ -95,7 +95,7 @@ const Blog = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <button className="border-2 border-gold-500 text-white px-6 py-3 rounded-sm font-bold hover:bg-gold-500 hover:text-black transition-all duration-300">
+          <button className="border-2 border-hyrox-500 text-white px-6 py-3 rounded-sm font-bold hover:bg-hyrox-500 hover:text-black transition-all duration-300">
             View All Articles
           </button>
         </div>
@@ -111,9 +111,9 @@ const Blog = () => {
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="bg-black/50 border border-white/20 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-gold-500 flex-grow"
+                  className="bg-black/50 border border-white/20 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-hyrox-500 flex-grow"
                 />
-                <button className="bg-gold-500 text-black px-6 py-3 rounded-sm font-bold hover:bg-gold-600 transition-colors duration-300 whitespace-nowrap">
+                <button className="bg-hyrox-500 text-black px-6 py-3 rounded-sm font-bold hover:bg-hyrox-600 transition-colors duration-300 whitespace-nowrap">
                   Subscribe
                 </button>
               </div>

@@ -1,180 +1,194 @@
 //components/Pricing.tsx
 
+import React, { useState } from 'react';
+import { Check, Zap } from 'lucide-react';
 
-import React from 'react';
-import { Check, X } from 'lucide-react';
 
-const phoneNumber = "971565974353"
+type Duration = {
+  duration: string;
+  months: number;
+  total: number;
+  perMonth: number;
+  save: number | null;
+};
 
-type PricingCardProps = {
-  title: string;
-  price: string | number;
-  period: string;
-  description: string;
+type Tier = {
+  name: string;
+  tagline: string;
+  durations: Duration[];
   features: string[];
-  notIncluded?: string[];
-  buttonText: string;
   highlighted?: boolean;
 };
 
-const PricingCard: React.FC<PricingCardProps> = ({
-  title, 
-  price, 
-  period, 
-  description, 
-  features, 
-  notIncluded, 
-  buttonText, 
-  highlighted = false ,
-}) => {
-  console.log("Rendering card for:", title)
+const tiers: Tier[] = [
+  {
+    name: "Gold",
+    tagline: "Structured online coaching to build momentum.",
+    durations: [
+      { duration: "1 month", months: 1, total: 599, perMonth: 599, save: null },
+      { duration: "2 months", months: 2, total: 1099, perMonth: 550, save: 99 },
+      { duration: "4 months", months: 4, total: 2099, perMonth: 525, save: 297 },
+      { duration: "8 months", months: 8, total: 3799, perMonth: 475, save: 993 },
+    ],
+    features: [
+      "Custom training plan",
+      "Goal-based programming",
+      "Nutrition guidance",
+      "WhatsApp check-ins",
+    ],
+  },
+  {
+    name: "Platinum",
+    tagline: "Full performance coaching with daily support.",
+    durations: [
+      { duration: "1 month", months: 1, total: 999, perMonth: 999, save: null },
+      { duration: "2 months", months: 2, total: 1849, perMonth: 925, save: 149 },
+      { duration: "4 months", months: 4, total: 3499, perMonth: 875, save: 497 },
+      { duration: "8 months", months: 8, total: 6399, perMonth: 800, save: 1593 },
+    ],
+    features: [
+      "Everything in Gold",
+      "Weekly 1:1 feedback review",
+      "Video form reviews",
+      "Daily WhatsApp access",
+      "Advanced nutrition & macro coaching",
+    ],
+    highlighted: true,
+  },
+];
+
+const PricingTier: React.FC<{ tier: Tier }> = ({ tier }) => {
+  const [selected, setSelected] = useState(tier.durations.length - 1);
+  const active = tier.durations[selected];
+
   return (
-    
-    <div 
-      className={`rounded-sm overflow-hidden transition-transform duration-300 hover:-translate-y-2 ${
-        highlighted 
-          ? 'bg-gradient-to-b from-gold-500/20 via-gray-900 to-gray-900 border-t-4 border-gold-500' 
-          : 'bg-gray-900 border-t-4 border-transparent'
+    <div
+      className={`relative bg-gray-950 overflow-hidden transition-all duration-300 ${
+        tier.highlighted
+          ? 'border-2 border-hyrox-500 shadow-2xl shadow-hyrox-500/10'
+          : 'border-2 border-white/10 hover:border-white/20'
       }`}
     >
-      <div className="p-8">
-        <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <div className="mb-4">
-          <span className="text-4xl font-bold text-white">${price}</span>
-          <span className="text-white/70 ml-1">/{period}</span>
+      {tier.highlighted && (
+        <div className="bg-hyrox-500 text-white text-xs font-bold uppercase tracking-widest text-center py-2 flex items-center justify-center gap-1">
+          <Zap className="w-3 h-3" />
+          Most Committed
         </div>
-        <p className="text-white/70 mb-6">{description}</p>
-        
+      )}
+
+      <div className="p-8">
+        <h3 className="text-3xl font-display text-white mb-1">{tier.name}</h3>
+        <p className="text-white/60 mb-6">{tier.tagline}</p>
+
+        {/* Duration selector */}
+        <div className="grid grid-cols-4 gap-2 mb-6">
+          {tier.durations.map((d, i) => (
+            <button
+              key={d.duration}
+              onClick={() => setSelected(i)}
+              className={`relative py-2 text-xs font-bold uppercase tracking-wide transition-all duration-200 border-2 ${
+                selected === i
+                  ? 'bg-hyrox-500 border-hyrox-500 text-white'
+                  : 'border-white/15 text-white/60 hover:border-white/40 hover:text-white'
+              }`}
+            >
+              {d.months}mo
+              {d.save && (
+                <span className="absolute -top-2 -right-2 bg-white text-black text-[9px] font-bold px-1 leading-tight">
+                  -{d.save}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+
+        <div className="mb-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-4xl font-display text-white">AED {active.perMonth}</span>
+            <span className="text-white/50">/month</span>
+          </div>
+          <p className="text-white/50 text-sm mt-1">
+            AED {active.total.toLocaleString()} total for {active.duration}
+            {active.save ? ` — you save AED ${active.save.toLocaleString()}` : ''}
+          </p>
+        </div>
+
         <ul className="space-y-3 mb-8">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start">
-              <Check className="text-gold-500 h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
+          {tier.features.map((feature) => (
+            <li key={feature} className="flex items-start">
+              <Check className="text-hyrox-500 h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
               <span className="text-white/90">{feature}</span>
             </li>
           ))}
-          
-          {notIncluded && notIncluded.map((feature, index) => (
-            <li key={index} className="flex items-start opacity-50">
-              <X className="text-red-500 h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-              <span className="text-white/70 line-through">{feature}</span>
-            </li>
-          ))}
         </ul>
-        <a href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    `I want to join the ${title} programme.`
-  )}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className={`block text-center w-full py-3 font-bold rounded-sm transition-colors duration-300 ${
-    highlighted 
-      ? 'bg-gold-500 text-black hover:bg-gold-600' 
-      : 'bg-white/10 text-white hover:bg-white/20'
-  }`}
->
-  {buttonText}
-</a>
+
+        <a
+          href="/apply"
+          className={`block text-center w-full py-3 font-bold uppercase tracking-wide transition-colors duration-300 ${
+            tier.highlighted
+              ? 'bg-hyrox-500 text-white hover:bg-hyrox-600'
+              : 'bg-white/10 text-white hover:bg-white/20'
+          }`}
+        >
+          Choose {tier.name}
+        </a>
       </div>
     </div>
   );
 };
 
 const Pricing = () => {
-  const plans = [
-    {
-      title: "Basic",
-      price: "49",
-      period: "month",
-      description: "Perfect for beginners looking to start their fitness journey.",
-      features: [
-        "2 training sessions per week",
-        "Basic fitness assessment",
-        "Access to gym facilities",
-        "Basic nutrition guide"
-      ],
-      notIncluded: [
-        "Personal training sessions",
-        "Advanced nutrition coaching"
-      ],
-      buttonText: "Get Started",
-      
-    },
-    {
-      title: "Premium",
-      price: "99",
-      period: "month",
-      description: "Our most popular plan for serious fitness enthusiasts.",
-      features: [
-        "Unlimited training sessions",
-        "Comprehensive fitness assessment",
-        "Personal training (2x/month)",
-        "Nutrition coaching",
-        "Access to all classes & facilities",
-        "Monthly progress review"
-      ],
-      buttonText: "Join Now",
-      highlighted: true
-    },
-    {
-      title: "Elite",
-      price: "199",
-      period: "month",
-      description: "The ultimate fitness experience for maximum results.",
-      features: [
-        "Unlimited training sessions",
-        "Advanced fitness assessment",
-        "Personal training (2x/week)",
-        "Advanced nutrition coaching",
-        "Access to all classes & facilities",
-        "Weekly progress reviews",
-        "Recovery sessions"
-      ],
-      buttonText: "Get Elite Access"
-    }
-  ];
-
   return (
-    <section id="pricing" className="py-20 bg-gray-950">
+    <section id="pricing" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Membership <span className="text-gold-500">Plans</span></h2>
+          <div className="inline-flex items-center gap-2 bg-hyrox-500/20 border border-hyrox-500/30 px-4 py-2 text-hyrox-400 text-sm font-bold uppercase tracking-widest mb-6">
+            <Zap className="w-4 h-4" />
+            Online Coaching
+          </div>
+          <h2 className="text-4xl md:text-5xl font-display text-white mb-4">
+            Coaching <span className="text-hyrox-500">Plans</span>
+          </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Choose the perfect plan that fits your fitness goals and budget. All plans include access to our premium facilities.
+            Pick a tier, then choose how many months you want to commit to — longer plans cost less per month.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {plans.map((plan, index) => (
-            <PricingCard key={index} {...plan} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {tiers.map((tier) => (
+            <PricingTier key={tier.name} tier={tier} />
           ))}
         </div>
-        
+
         <div className="mt-12 text-center">
-          <p className="text-white/60 mb-4">Looking for corporate plans or family discounts?</p>
-          <a href="#contact" className="text-gold-500 hover:underline font-medium">Contact us for custom pricing</a>
+          <p className="text-white/60 mb-4">Not sure which plan fits your goals?</p>
+          <a href="/apply" className="text-hyrox-500 hover:underline font-bold uppercase tracking-wide text-sm">
+            Get a free consultation
+          </a>
         </div>
-        
-        <div className="mt-20 bg-gray-900 rounded-sm p-8 max-w-3xl mx-auto">
+
+        <div className="mt-20 bg-gray-950 border border-white/10 p-8 max-w-3xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-2">Frequently Asked Questions</h3>
-            <p className="text-white/70">Get answers to common questions about our membership plans.</p>
+            <h3 className="text-2xl font-display text-white mb-2">Frequently Asked Questions</h3>
+            <p className="text-white/70">Get answers to common questions about coaching plans.</p>
           </div>
-          
+
           <div className="space-y-6">
             {[
               {
-                question: "Can I cancel my membership anytime?",
-                answer: "Yes, all our membership plans can be canceled with 30 days notice. There are no long-term contracts or cancellation fees."
+                question: "What's the difference between Gold and Platinum?",
+                answer: "Gold covers a custom training plan and nutrition guidance with regular check-ins. Platinum adds weekly 1:1 feedback, video form reviews, daily WhatsApp access, and advanced nutrition coaching for full performance support."
               },
               {
-                question: "What's included in the fitness assessment?",
-                answer: "Our fitness assessment includes body composition analysis, strength testing, cardiovascular fitness evaluation, flexibility assessment, and goal setting consultation."
+                question: "Can I switch plans mid-term?",
+                answer: "Yes — message us on WhatsApp and we'll adjust your plan and pricing accordingly for your next billing period."
               },
               {
-                question: "Are there any additional fees?",
-                answer: "The membership price is all-inclusive. There are no additional fees for the features listed in your plan. Specialized services not included in your plan may be available for an additional fee."
+                question: "Do longer plans really cost less?",
+                answer: "Yes. Every plan is billed as a single upfront payment for the chosen duration, and the per-month rate drops the longer you commit — see the savings shown on each duration option."
               }
-            ].map((faq, index) => (
-              <div key={index} className="border-b border-white/10 pb-6">
+            ].map((faq) => (
+              <div key={faq.question} className="border-b border-white/10 pb-6">
                 <h4 className="text-lg font-bold text-white mb-2">{faq.question}</h4>
                 <p className="text-white/70">{faq.answer}</p>
               </div>

@@ -10,10 +10,36 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
-    <title>AE Build | Personal Training by Althaf Emir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>AE Build | HYROX & Performance Coaching by Althaf Emir</title>
   </head>
   <body>
+    <!-- Hidden form so Netlify detects the coaching application at build time (submitted from src/pages/Apply.tsx) -->
+    <form name="coaching-application" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="text" name="age" />
+      <input type="text" name="countryTimezone" />
+      <input type="text" name="contactMethod" />
+      <input type="text" name="mainGoal" />
+      <input type="text" name="eventOrDistance" />
+      <input type="text" name="secondaryGoals" />
+      <input type="text" name="mainTarget" />
+      <input type="text" name="hasTargetDate" />
+      <input type="text" name="targetDate" />
+      <input type="text" name="experience" />
+      <input type="text" name="trainingLocation" />
+      <input type="text" name="daysPerWeek" />
+      <input type="text" name="sessionLength" />
+      <input type="text" name="equipment" />
+      <input type="text" name="hasInjury" />
+      <textarea name="injuryDetails"></textarea>
+      <input type="text" name="hasMedication" />
+      <textarea name="medicationDetails"></textarea>
+      <textarea name="notes"></textarea>
+      <input type="text" name="confirmed" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

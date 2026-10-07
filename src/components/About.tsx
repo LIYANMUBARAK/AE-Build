@@ -14,9 +14,9 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About <span className="text-gold-500">Me</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About <span className="text-hyrox-500">Me</span></h2>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Althaf Emir | Performance Coach | Founder of AE Build</h3>
-            <p className="text-gold-500 italic mb-6">"You are the project."</p>
+            <p className="text-hyrox-500 italic mb-6">"You are the project."</p>
             <p className="text-white/80 mb-6 leading-relaxed">
               I'm not here to count your reps—I'm here to build your engine, elevate your strength, and help you perform at your absolute best. As a certified <span className="font-bold">Performance Coach</span> and HYROX athlete, I specialize in hybrid training systems that combine endurance, strength, and movement efficiency—designed for both competitors and everyday high-performers.
             </p>
@@ -35,13 +35,13 @@ const About = () => {
                 "Trauma Response Certified"
               ].map((feature, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="h-2 w-2 bg-gold-500 rounded-full mr-3"></span>
+                  <span className="h-2 w-2 bg-hyrox-500 rounded-full mr-3"></span>
                   <span className="text-white">{feature}</span>
                 </div>
               ))}
             </div>
             
-            <button className="border-2 border-gold-500 text-white px-6 py-3 rounded-sm font-bold hover:bg-gold-500 hover:text-black transition-all duration-300">
+            <button className="border-2 border-hyrox-500 text-white px-6 py-3 rounded-sm font-bold hover:bg-hyrox-500 hover:text-white transition-all duration-300">
               Learn More About Me
             </button>
           </div>

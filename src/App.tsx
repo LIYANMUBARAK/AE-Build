@@ -33,6 +33,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import ProgramDetail from './pages/ProgramDetail';
+import Apply from './pages/Apply';
 
 
 
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/programs/:slug" element={<ProgramDetail />} />
+        <Route path="/apply" element={<Apply />} />
       </Routes>
     </Router>
   );

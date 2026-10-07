@@ -3,56 +3,37 @@ import { useParams } from 'react-router-dom';
 import { CheckCircle, Target, Clock, Users, Star, Zap, Award, TrendingUp, ArrowRight, Play, Calendar, Heart, Dumbbell, Trophy, Activity, BookOpen, MessageCircle } from 'lucide-react';
 import Header from '../components/Header';
 
-const phoneNumber = "971565974353";
 
 const pricingPackages = [
   {
-    name: "Basic",
-    price: "99 AED/month",
-    tagline: "Start strong with a structured foundation.",
-    description: "Perfect for beginners who want to establish good fitness habits with professional guidance.",
+    name: "Gold",
+    price: "From AED 475/month",
+    tagline: "Structured online coaching to build momentum.",
+    description: "Custom training plan, goal-based programming, and nutrition guidance with regular WhatsApp check-ins.",
     features: [
-      "3 sessions/week",
-      "4-6 week PDF plan (goal-based)",
-      "Basic nutrition guide",
-      "WhatsApp onboarding + end check-in",
-      "No ongoing support/check-ins"
+      "Custom training plan",
+      "Goal-based programming",
+      "Nutrition guidance",
+      "WhatsApp check-ins",
+      "Price drops the longer you commit (1-8 months)"
     ],
-    color: "from-green-500 to-emerald-600",
-    icon: "🚀"
+    color: "from-gray-500 to-gray-700",
+    icon: "🥇"
   },
   {
-    name: "Premium",
-    price: "249 AED/month",
-    tagline: "More structure, more accountability.",
-    description: "Ideal for those who want regular guidance and personalized nutrition support.",
+    name: "Platinum",
+    price: "From AED 800/month",
+    tagline: "Full performance coaching with daily support.",
+    description: "Everything in Gold plus weekly 1:1 feedback, video form reviews, and daily coach access.",
     features: [
-      "6 sessions/week",
-      "Plan adjusted to your gym/equipment & schedule",
-      "Personalized macros + food list",
-      "Weekly check-ins (WhatsApp)",
-      "1-2 video form reviews/week",
-      "Mid-plan adjustment if needed"
+      "Everything in Gold",
+      "Weekly 1:1 feedback review",
+      "Video form reviews",
+      "Daily WhatsApp access",
+      "Advanced nutrition & macro coaching",
+      "Price drops the longer you commit (1-8 months)"
     ],
-    color: "from-yellow-500 to-orange-600",
-    icon: "⚡"
-  },
-  {
-    name: "Elite",
-    price: "499 AED/month",
-    tagline: "Complete coaching with full performance support.",
-    description: "Perfect for athletes, competitors, or those who want full structure and accountability.",
-    features: [
-      "Daily or unlimited sessions (HYROX prep, athlete split, or full custom)",
-      "Weekly updated plan based on results",
-      "Advanced nutrition (macro timing, food types, refeeds)",
-      "Weekly 1:1 feedback review (photos, weight, biofeedback)",
-      "Daily WhatsApp access (Mon-Sat)",
-      "2-3 video reviews/week",
-      "Supplement + recovery + peak week guidance",
-      "End-phase plan or race strategy"
-    ],
-    color: "from-red-500 to-pink-600",
+    color: "from-hyrox-500 to-hyrox-700",
     icon: "🏆",
     popular: true
   }
@@ -124,7 +105,7 @@ const programDetails: Record<string, any> = {
       }
     ],
     stats: { difficulty: 'Intermediate', duration: '8-12 weeks', intensity: 'High' },
-    color: 'from-blue-600 to-purple-700',
+    color: 'from-hyrox-600 to-hyrox-800',
     methodology: 'Based on proven strength training principles including linear periodization, autoregulation, and movement quality assessment.',
     expectedResults: 'Significant strength gains (15-30% increase in major lifts), improved muscle mass, better movement quality, and enhanced athletic performance.',
     equipment: 'Barbell, dumbbells, resistance bands, and basic gym equipment. Can be adapted for home gym setups.',
@@ -195,7 +176,7 @@ const programDetails: Record<string, any> = {
       }
     ],
     stats: { difficulty: 'Beginner-Friendly', duration: '6-8 weeks', intensity: 'High' },
-    color: 'from-orange-500 to-red-600',
+    color: 'from-hyrox-500 to-hyrox-700',
     methodology: 'Combines metabolic training principles with evidence-based nutrition strategies for sustainable fat loss.',
     expectedResults: 'Significant fat loss (1-2 lbs per week), improved cardiovascular fitness, increased energy levels, and better body composition.',
     equipment: 'Minimal equipment needed - bodyweight, resistance bands, and basic cardio equipment.',
@@ -266,7 +247,7 @@ const programDetails: Record<string, any> = {
       }
     ],
     stats: { difficulty: 'Advanced', duration: '12-16 weeks', intensity: 'Extreme' },
-    color: 'from-purple-600 to-indigo-700',
+    color: 'from-hyrox-400 to-hyrox-600',
     methodology: 'Periodized approach combining aerobic base building, strength development, and sport-specific skill training.',
     expectedResults: 'Improved HYROX performance, enhanced endurance capacity, increased functional strength, and competitive readiness.',
     equipment: 'Full gym access required including rowing machine, ski erg, sandbags, kettlebells, and sled.',
@@ -318,7 +299,7 @@ const ProgramDetail = () => {
                 {data.title[0]}
               </div>
               <div>
-                <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400">
+                <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-hyrox-400">
                   {data.title}
                 </h1>
                 <p className="text-xl text-gray-300 mt-2">{data.description}</p>
@@ -328,21 +309,21 @@ const ProgramDetail = () => {
             {/* Stats Bar */}
             <div className="flex space-x-8 bg-black/50 backdrop-blur-md rounded-2xl p-6 border border-white/10">
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400">{data.stats.difficulty}</div>
+                <div className="text-2xl font-bold text-hyrox-400">{data.stats.difficulty}</div>
                 <div className="text-sm text-gray-400 flex items-center justify-center">
                   <Target className="w-4 h-4 mr-1" />
                   Difficulty
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400">{data.stats.duration}</div>
+                <div className="text-2xl font-bold text-hyrox-400">{data.stats.duration}</div>
                 <div className="text-sm text-gray-400 flex items-center justify-center">
                   <Clock className="w-4 h-4 mr-1" />
                   Duration
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400">{data.stats.intensity}</div>
+                <div className="text-2xl font-bold text-hyrox-400">{data.stats.intensity}</div>
                 <div className="text-sm text-gray-400 flex items-center justify-center">
                   <Zap className="w-4 h-4 mr-1" />
                   Intensity
@@ -363,7 +344,7 @@ const ProgramDetail = () => {
                 onClick={() => setActiveTab(tab)}
                 className={`py-4 px-2 font-semibold text-sm uppercase tracking-wider transition-all duration-300 border-b-2 ${
                   activeTab === tab 
-                    ? 'text-yellow-400 border-yellow-400' 
+                    ? 'text-hyrox-400 border-hyrox-400' 
                     : 'text-gray-400 border-transparent hover:text-white'
                 }`}
               >
@@ -381,7 +362,7 @@ const ProgramDetail = () => {
             {/* Program Description */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <BookOpen className="w-8 h-8 text-yellow-400 mr-3" />
+                <BookOpen className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Program Overview</h2>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">{data.detailedDescription}</p>
@@ -390,13 +371,13 @@ const ProgramDetail = () => {
             {/* Benefits Section */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <Award className="w-8 h-8 text-yellow-400 mr-3" />
+                <Award className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Key Benefits</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {data.benefits.map((benefit: string, i: number) => (
                   <div key={i} className="flex items-start space-x-3 p-4 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
-                    <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                    <div className="w-8 h-8 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
                       {i + 1}
                     </div>
                     <div>
@@ -410,7 +391,7 @@ const ProgramDetail = () => {
             {/* Target Audience */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <Users className="w-8 h-8 text-yellow-400 mr-3" />
+                <Users className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Perfect For</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -433,7 +414,7 @@ const ProgramDetail = () => {
             {/* Methodology */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <Activity className="w-8 h-8 text-yellow-400 mr-3" />
+                <Activity className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Training Methodology</h2>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">{data.methodology}</p>
@@ -442,7 +423,7 @@ const ProgramDetail = () => {
             {/* Expected Results */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <TrendingUp className="w-8 h-8 text-yellow-400 mr-3" />
+                <TrendingUp className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Expected Results</h2>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">{data.expectedResults}</p>
@@ -452,7 +433,7 @@ const ProgramDetail = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
                 <div className="flex items-center mb-6">
-                  <Dumbbell className="w-8 h-8 text-yellow-400 mr-3" />
+                  <Dumbbell className="w-8 h-8 text-hyrox-400 mr-3" />
                   <h2 className="text-2xl font-bold text-white">Equipment</h2>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{data.equipment}</p>
@@ -460,7 +441,7 @@ const ProgramDetail = () => {
               
               <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
                 <div className="flex items-center mb-6">
-                  <Heart className="w-8 h-8 text-yellow-400 mr-3" />
+                  <Heart className="w-8 h-8 text-hyrox-400 mr-3" />
                   <h2 className="text-2xl font-bold text-white">Nutrition</h2>
                 </div>
                 <p className="text-gray-300 leading-relaxed">{data.nutrition}</p>
@@ -475,14 +456,14 @@ const ProgramDetail = () => {
             {/* Training Phases */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <Calendar className="w-8 h-8 text-yellow-400 mr-3" />
+                <Calendar className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Training Phases</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.phases.map((phase: any, i: number) => (
                   <div key={i} className="p-6 rounded-xl bg-black/40 hover:bg-black/60 transition-all duration-300 transform hover:scale-105 border border-white/5">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold mr-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
                         {i + 1}
                       </div>
                       <h3 className="text-xl font-bold text-white">{phase.name}</h3>
@@ -497,7 +478,7 @@ const ProgramDetail = () => {
             {/* Training Frequency */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <Activity className="w-8 h-8 text-yellow-400 mr-3" />
+                <Activity className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Training Frequency</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -506,7 +487,7 @@ const ProgramDetail = () => {
                   <div className="space-y-3">
                     {data.frequency.map((item: string, i: number) => (
                       <div key={i} className="flex items-center p-3 rounded-lg bg-black/40 border border-white/5">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-hyrox-400 rounded-full mr-3"></div>
                         <span className="text-gray-300">{item}</span>
                       </div>
                     ))}
@@ -517,7 +498,7 @@ const ProgramDetail = () => {
                   <div className="space-y-3">
                     {data.features.map((feature: string, i: number) => (
                       <div key={i} className="flex items-center p-3 rounded-lg bg-black/40 border border-white/5">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-hyrox-400 rounded-full mr-3"></div>
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -529,13 +510,13 @@ const ProgramDetail = () => {
             {/* Program Progression */}
             <div className="bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border border-white/10">
               <div className="flex items-center mb-6">
-                <TrendingUp className="w-8 h-8 text-yellow-400 mr-3" />
+                <TrendingUp className="w-8 h-8 text-hyrox-400 mr-3" />
                 <h2 className="text-3xl font-bold text-white">Program Progression</h2>
               </div>
               <div className="space-y-6">
                 {data.progression.map((stage: any, i: number) => (
                   <div key={i} className="flex items-start p-4 rounded-xl bg-black/40 border border-white/5">
-                    <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-black font-bold mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
                       {stage.weeks}
                     </div>
                     <div className="flex-1">
@@ -557,19 +538,19 @@ const ProgramDetail = () => {
               <p className="text-xl text-gray-400">Select the perfect plan for your fitness journey</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {pricingPackages.map((plan, i) => (
                 <div
                   key={i}
                   className={`relative bg-gradient-to-br from-black/80 to-gray-900/80 backdrop-blur-md rounded-3xl p-8 border transition-all duration-500 transform hover:scale-105 ${
                     plan.popular 
-                      ? 'border-yellow-400 shadow-2xl shadow-yellow-400/20' 
+                      ? 'border-hyrox-400 shadow-2xl shadow-hyrox-400/20' 
                       : 'border-white/10 hover:border-white/20'
                   }`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-2 rounded-full text-sm font-bold flex items-center">
+                      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center">
                         <Star className="w-4 h-4 mr-1" />
                         Most Popular
                       </div>
@@ -579,7 +560,7 @@ const ProgramDetail = () => {
                   <div className="text-center mb-6">
                     <div className="text-6xl mb-4">{plan.icon}</div>
                     <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
-                    <div className="text-3xl font-bold text-yellow-400 mt-2">{plan.price}</div>
+                    <div className="text-3xl font-bold text-hyrox-400 mt-2">{plan.price}</div>
                     <p className="text-gray-400 italic mt-2">{plan.tagline}</p>
                   </div>
 
@@ -595,14 +576,12 @@ const ProgramDetail = () => {
                   </div>
 
                   <a
-                    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hi, I'm interested in the ${data.title} program with the ${plan.name} package (${plan.price}). Can you share more details?`)}`}
+                    href="/apply"
                     className={`block text-center font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black hover:from-yellow-500 hover:to-orange-600' 
+                        ? 'bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white hover:from-hyrox-500 hover:to-hyrox-700' 
                         : 'bg-gradient-to-r from-gray-700 to-black text-white hover:from-gray-600 hover:to-gray-900'
                     }`}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <span className="flex items-center justify-center">
                       Get Started
@@ -612,21 +591,23 @@ const ProgramDetail = () => {
                 </div>
               ))}
             </div>
+            <p className="text-center text-gray-400 mt-8">
+              Want to see monthly pricing across 1, 2, 4 and 8-month plans?{' '}
+              <a href="/#pricing" className="text-hyrox-400 hover:underline font-semibold">View full pricing</a>
+            </p>
           </div>
         )}
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-16">
+      <div className="bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white py-16">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Fitness?</h2>
           <p className="text-xl mb-8 opacity-90">Join thousands of satisfied clients who have achieved their goals with our proven programs.</p>
           <div className="flex justify-center space-x-6">
             <a
-              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hi, I'm interested in the ${data.title} program. Can you share more details?`)}`}
+              href="/apply"
               className="bg-black text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Start Your Journey

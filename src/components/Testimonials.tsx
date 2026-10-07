@@ -43,7 +43,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success <span className="text-gold-500">Stories</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Success <span className="text-hyrox-500">Stories</span></h2>
           <p className="text-white/70 max-w-2xl mx-auto">
             Hear from our clients who have transformed their bodies and lives with Elite Fitness programs.
           </p>
@@ -52,12 +52,12 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-gray-900 rounded-sm p-8 md:p-12">
             <div className="absolute top-6 left-6 opacity-10">
-              <Quote size={80} className="text-gold-500" />
+              <Quote size={80} className="text-hyrox-500" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="md:col-span-1">
-                <div className="h-64 w-64 mx-auto rounded-full overflow-hidden border-4 border-gold-500">
+                <div className="h-64 w-64 mx-auto rounded-full overflow-hidden border-4 border-hyrox-500">
                   <img 
                     src={testimonials[activeIndex].image} 
                     alt={testimonials[activeIndex].name} 
@@ -72,7 +72,7 @@ const Testimonials = () => {
                 </p>
                 <div className="border-t border-white/10 pt-4">
                   <h4 className="text-xl font-bold text-white">{testimonials[activeIndex].name}</h4>
-                  <p className="text-gold-500">{testimonials[activeIndex].role}</p>
+                  <p className="text-hyrox-500">{testimonials[activeIndex].role}</p>
                   <p className="text-white/70 mt-2">Result: {testimonials[activeIndex].results}</p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const Testimonials = () => {
             <div className="flex justify-center mt-8 space-x-4">
               <button 
                 onClick={prevTestimonial}
-                className="bg-gray-800 hover:bg-gold-500 text-white hover:text-black rounded-full p-2 transition-colors duration-300"
+                className="bg-gray-800 hover:bg-hyrox-500 text-white hover:text-black rounded-full p-2 transition-colors duration-300"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -91,7 +91,7 @@ const Testimonials = () => {
                     key={index}
                     onClick={() => setActiveIndex(index)}
                     className={`h-3 w-3 rounded-full transition-colors duration-300 ${
-                      index === activeIndex ? 'bg-gold-500' : 'bg-gray-700 hover:bg-gray-600'
+                      index === activeIndex ? 'bg-hyrox-500' : 'bg-gray-700 hover:bg-gray-600'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -99,7 +99,7 @@ const Testimonials = () => {
               </div>
               <button 
                 onClick={nextTestimonial}
-                className="bg-gray-800 hover:bg-gold-500 text-white hover:text-black rounded-full p-2 transition-colors duration-300"
+                className="bg-gray-800 hover:bg-hyrox-500 text-white hover:text-black rounded-full p-2 transition-colors duration-300"
               >
                 <ChevronRight size={24} />
               </button>
@@ -119,7 +119,7 @@ const Testimonials = () => {
               key={index} 
               className="bg-gray-900 p-8 rounded-sm text-center hover:-translate-y-2 transition-transform duration-300"
             >
-              <h3 className="text-gold-500 text-4xl font-bold mb-2">{stat.number}</h3>
+              <h3 className="text-hyrox-500 text-4xl font-bold mb-2">{stat.number}</h3>
               <p className="text-white text-lg">{stat.label}</p>
             </div>
           ))}

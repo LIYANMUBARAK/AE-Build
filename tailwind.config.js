@@ -4,40 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: {
-          50: '#FFF9E6',
-          100: '#FFF3CC',
-          200: '#FFE799',
-          300: '#FFDB66',
-          400: '#FFCF33',
-          500: '#D4AF37', // Primary gold
-          600: '#BF9B32',
-          700: '#AA882C',
-          800: '#957427',
-          900: '#806121',
+        hyrox: {
+          50: '#FFE5E8',
+          100: '#FFB8C0',
+          200: '#FF8A96',
+          300: '#FA5C6C',
+          400: '#F02338',
+          500: '#E4002B', // Primary HYROX red
+          600: '#BE0024',
+          700: '#97001D',
+          800: '#710015',
+          900: '#4A000E',
         },
         black: {
-          DEFAULT: '#0F0F0F',
-          light: '#1A1A1A',
+          DEFAULT: '#000000',
+          light: '#141414',
         },
       },
       fontFamily: {
-        sans: [
-          'League Gothic',  // Add this line at the top
-          'Inter',
-          'ui-sans-serif',
-          // 'Inter',
-          // 'ui-sans-serif',
-          // 'system-ui',
-          // '-apple-system',
-          // 'BlinkMacSystemFont',
-          // 'Segoe UI',
-          // 'Roboto',
-          // 'Helvetica Neue',
-          // 'Arial',
-          // 'sans-serif',
-        ],
-        'league': ['"League Gothic"', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Anton', '"League Gothic"', 'sans-serif'],
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',

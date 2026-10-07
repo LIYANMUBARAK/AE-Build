@@ -37,15 +37,15 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative bg-gray-900 rounded-2xl p-8 border border-yellow-400/20">
+    <div className="relative bg-gray-900 rounded-2xl p-8 border border-hyrox-400/20">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent rounded-2xl"></div>
-      <div className="absolute top-4 right-4 w-16 h-16 bg-yellow-400/5 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-hyrox-500/5 to-transparent rounded-2xl"></div>
+      <div className="absolute top-4 right-4 w-16 h-16 bg-hyrox-400/5 rounded-full blur-xl animate-pulse"></div>
       
       <div className="relative z-10">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-            <MessageCircle className="w-5 h-5 text-black" />
+          <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center">
+            <MessageCircle className="w-5 h-5 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-white">Get In Touch</h3>
         </div>
@@ -69,7 +69,7 @@ const ContactForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400 transition-all duration-300 hover:border-white/40"
+                  className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-hyrox-400 transition-all duration-300 hover:border-white/40"
                   placeholder="Your name"
                   required
                 />
@@ -82,7 +82,7 @@ const ContactForm = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400 transition-all duration-300 hover:border-white/40"
+                  className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-hyrox-400 transition-all duration-300 hover:border-white/40"
                   placeholder="Your email"
                   required
                 />
@@ -97,7 +97,7 @@ const ContactForm = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400 transition-all duration-300 hover:border-white/40"
+                className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-hyrox-400 transition-all duration-300 hover:border-white/40"
                 placeholder="Subject"
                 required
               />
@@ -111,7 +111,7 @@ const ContactForm = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400 transition-all duration-300 hover:border-white/40 resize-none"
+                className="w-full bg-black border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-hyrox-400 transition-all duration-300 hover:border-white/40 resize-none"
                 placeholder="Tell us about your fitness goals and how we can help you achieve them..."
                 required
               ></textarea>
@@ -120,7 +120,7 @@ const ContactForm = () => {
             <button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-4 rounded-xl font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <div className="flex items-center">
@@ -173,21 +173,21 @@ const Contact = () => {
     <section id="contact" className="relative py-20 bg-black overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-hyrox-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-hyrox-600/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 px-4 py-2 rounded-full text-yellow-400 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-hyrox-500/20 backdrop-blur-sm border border-hyrox-500/30 px-4 py-2 rounded-full text-hyrox-400 text-sm font-medium mb-6">
             <Zap className="w-4 h-4" />
             Get In Touch
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Ready to Start Your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-hyrox-400 to-hyrox-600">
               Transformation?
             </span>
           </h2>
@@ -212,15 +212,15 @@ const Contact = () => {
                 return (
                   <div 
                     key={index} 
-                    className="group bg-gray-900 rounded-2xl p-6 border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300 hover:scale-105"
+                    className="group bg-gray-900 rounded-2xl p-6 border border-hyrox-400/20 hover:border-hyrox-400/40 transition-all duration-300 hover:scale-105"
                   >
                     <div className="flex items-start">
-                      <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-6 h-6 text-black" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div>
                         <h4 className="text-white font-bold text-lg mb-1">{info.title}</h4>
-                        <p className="text-yellow-400 font-semibold mb-1">{info.content}</p>
+                        <p className="text-hyrox-400 font-semibold mb-1">{info.content}</p>
                         <p className="text-gray-400 text-sm">{info.subtext}</p>
                       </div>
                     </div>
@@ -230,9 +230,9 @@ const Contact = () => {
             </div>
             
             {/* Free Consultation CTA */}
-            <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl p-8 border border-yellow-400/30 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent"></div>
-              <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-400/10 rounded-full blur-xl animate-pulse"></div>
+            <div className="bg-gradient-to-br from-hyrox-500/10 to-hyrox-600/10 rounded-2xl p-8 border border-hyrox-400/30 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-hyrox-500/5 to-transparent"></div>
+              <div className="absolute top-4 right-4 w-20 h-20 bg-hyrox-400/10 rounded-full blur-xl animate-pulse"></div>
               
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-white mb-4">Free Consultation</h3>
@@ -248,15 +248,14 @@ const Contact = () => {
                     "Q&A session with our coach"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="text-yellow-400 h-5 w-5 mr-3 flex-shrink-0" />
+                      <CheckCircle className="text-hyrox-400 h-5 w-5 mr-3 flex-shrink-0" />
                       <span className="text-white/80">{feature}</span>
                     </div>
                   ))}
                 </div>
                 
-                <a                     href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hi, I'm interested in booking a FREE CONSULTATION session. Could you please share more details?`)}`}
-
-                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
+                <a href="/apply"
+                className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-4 rounded-xl font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group">
                   <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   Book Free Consultation
                 </a>

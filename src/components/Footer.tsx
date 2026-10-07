@@ -15,10 +15,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black border-t border-yellow-400/30">
+    <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black border-t border-hyrox-400/30">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-hyrox-400 via-hyrox-600 to-red-500"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_2rem_4rem,rgba(255,255,255,0.1),transparent)] animate-pulse"></div>
       </div>
 
@@ -29,11 +29,11 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center group">
               <div className="relative">
-                <Dumbbell className="text-yellow-400 h-10 w-10 mr-3 transform group-hover:rotate-12 transition-transform duration-300" />
-                {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div> */}
+                <Dumbbell className="text-hyrox-400 h-10 w-10 mr-3 transform group-hover:rotate-12 transition-transform duration-300" />
+                {/* <div className="absolute -top-1 -right-1 w-3 h-3 bg-hyrox-400 rounded-full animate-pulse"></div> */}
               </div>
               <span className="text-white font-bold text-2xl">
-                AE<span className="text-yellow-400">BUILD</span>
+                AE<span className="text-hyrox-400">BUILD</span>
               </span>
             </div>
             
@@ -65,12 +65,12 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-xl mb-6 relative">
               Quick Links
-              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full"></div>
             </h4>
             <ul className="space-y-3">
               {[
                 { name: "Home", href: "#home" },
-                { name: "Programs", href: "#programs" },
+                { name: "Programs", href: "#pricing" },
                 { name: "About Us", href: "#about" },
                 { name: "Testimonials", href: "#testimonials" },
                 { name: "Pricing", href: "#pricing" },
@@ -80,9 +80,9 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-yellow-400 transition-all duration-300 flex items-center group"
+                    className="text-gray-300 hover:text-hyrox-400 transition-all duration-300 flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-hyrox-400 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                     {link.name}
                   </a>
                 </li>
@@ -94,21 +94,21 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-xl mb-6 relative">
               Our Programs
-              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full"></div>
             </h4>
             <ul className="space-y-3">
               {[
-                { name: "Personal Training", href: "#programs", icon: "🏋️" },
-                { name: "Group Fitness", href: "#programs", icon: "👥" },
-                { name: "Nutrition Coaching", href: "#programs", icon: "🥗" },
-                { name: "Weight Loss", href: "#programs", icon: "⚖️" },
-                { name: "Strength & Conditioning", href: "#programs", icon: "💪" },
-                { name: "HYROX Training", href: "#programs", icon: "🏃" }
+                { name: "Personal Training", href: "#pricing", icon: "🏋️" },
+                { name: "Group Fitness", href: "#pricing", icon: "👥" },
+                { name: "Nutrition Coaching", href: "#pricing", icon: "🥗" },
+                { name: "Weight Loss", href: "#pricing", icon: "⚖️" },
+                { name: "Strength & Conditioning", href: "#pricing", icon: "💪" },
+                { name: "HYROX Training", href: "#pricing", icon: "🏃" }
               ].map((program, index) => (
                 <li key={index}>
                   <a 
                     href={program.href} 
-                    className="text-gray-300 hover:text-yellow-400 transition-all duration-300 flex items-center group"
+                    className="text-gray-300 hover:text-hyrox-400 transition-all duration-300 flex items-center group"
                   >
                     <span className="text-lg mr-3 group-hover:scale-110 transition-transform duration-300">
                       {program.icon}
@@ -124,7 +124,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold text-xl mb-6 relative">
               Stay Connected
-              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-1 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full"></div>
             </h4>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -138,14 +138,14 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email" 
-                  className="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-yellow-400 transition-all duration-300 pr-12"
+                  className="w-full bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-hyrox-400 transition-all duration-300 pr-12"
                 />
                 <Mail className="absolute right-3 top-3.5 text-gray-400 w-5 h-5" />
               </div>
               
               <button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-lg font-bold hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
+                className="w-full bg-gradient-to-r from-hyrox-400 to-hyrox-600 text-white px-6 py-3 rounded-lg font-bold hover:from-hyrox-500 hover:to-hyrox-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
               >
                 <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                 Subscribe
@@ -169,8 +169,8 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="flex items-center text-gray-300">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3">
-                <Phone className="w-5 h-5 text-black" />
+              <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
+                <Phone className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="text-sm text-gray-400">Call Us</div>
@@ -179,8 +179,8 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center text-gray-300">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3">
-                <Mail className="w-5 h-5 text-black" />
+              <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
+                <Mail className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="text-sm text-gray-400">Email Us</div>
@@ -189,8 +189,8 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center text-gray-300">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-3">
-                <MapPin className="w-5 h-5 text-black" />
+              <div className="w-10 h-10 bg-gradient-to-r from-hyrox-400 to-hyrox-600 rounded-full flex items-center justify-center mr-3">
+                <MapPin className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="text-sm text-gray-400">Visit Us</div>
@@ -211,8 +211,8 @@ const Footer = () => {
       </div>
       
       {/* Floating Elements
-      <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-400/5 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-orange-500/5 rounded-full blur-xl animate-pulse delay-1000"></div> */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-hyrox-400/5 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-hyrox-600/5 rounded-full blur-xl animate-pulse delay-1000"></div> */}
     </footer>
   );
 };
