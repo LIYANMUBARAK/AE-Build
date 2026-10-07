@@ -15,3 +15,11 @@
 ::selection {
   @apply bg-white text-black;
 }
+
+/* Hero photo: fade the left edge into the background on desktop */
+@media (min-width: 768px) {
+  .hero-photo-fade {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 35%);
+  }
+}

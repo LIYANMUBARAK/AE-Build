@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Zap, Trophy, Clock, Users,Apple  } from 'lucide-react';
-import HomePic2 from './shared/assets/images/HeroSection2.jpeg';
+import HomePic2 from './shared/assets/images/HeroSection2-web.jpg';
 
 interface StatItem {
   value: string;
@@ -20,17 +20,30 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16 bg-black overflow-hidden">
-      {/* Simple background overlay */}
-      <div className="absolute inset-0 bg-black/70 z-10"></div>
+      {/* Background overlay: darker on mobile (text sits on the photo), gradient from the left on desktop */}
+      <div className="absolute inset-0 bg-black/70 md:bg-transparent md:bg-gradient-to-r md:from-black/85 md:via-black/50 md:to-transparent z-10"></div>
 
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <img 
+      {/* Desktop: blurred copy of the photo fills the whole section so the left side isn't flat black */}
+      <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
+        <img
           src={HomePic2}
-          alt="Fitness background" 
-          className="w-full h-full object-cover opacity-60"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-[67%_30%] scale-110 blur-2xl opacity-40"
         />
       </div>
+
+      {/* Background image: full-bleed on mobile, right side on desktop with a soft left edge */}
+      <div className="absolute inset-0 md:left-auto md:w-[60%] z-0 hero-photo-fade">
+        <img
+          src={HomePic2}
+          alt="Fitness background"
+          className="w-full h-full object-cover object-[67%_30%] opacity-60 md:opacity-90"
+        />
+      </div>
+
+      {/* Bottom fade into the next section */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-black z-10 pointer-events-none"></div>
 
       <div className="container mx-auto px-4 z-20 relative">
         <div className="max-w-4xl">

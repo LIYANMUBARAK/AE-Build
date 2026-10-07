@@ -145,7 +145,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Address",
-      content: "info@aebuild.com",
+      content: "aebuild7@gmail.com",
       subtext: "We'll respond within 24 hours"
     },
     {
