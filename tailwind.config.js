@@ -27,11 +27,16 @@ export default {
       },
       animation: {
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marquee': 'marquee 40s linear infinite',
       },
       keyframes: {
         pulse: {
           '0%, 100%': { opacity: 0.6 },
           '50%': { opacity: 0.9 },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },
