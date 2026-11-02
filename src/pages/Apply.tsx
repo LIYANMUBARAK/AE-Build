@@ -36,6 +36,7 @@ const EQUIPMENT_OPTIONS = [
 type FormState = {
   fullName: string;
   email: string;
+  mobileNumber: string;
   age: string;
   countryTimezone: string;
   contactMethod: 'WhatsApp' | 'Email' | '';
@@ -64,6 +65,7 @@ type FormState = {
 const initialState: FormState = {
   fullName: '',
   email: '',
+  mobileNumber: '',
   age: '',
   countryTimezone: '',
   contactMethod: '',
@@ -139,7 +141,7 @@ const Apply: React.FC = () => {
 
   const validateStep = (): boolean => {
     if (step === 0) {
-      if (!form.fullName || !form.email || !form.age || !form.countryTimezone || !form.contactMethod) {
+      if (!form.fullName || !form.email || !form.mobileNumber || !form.age || !form.countryTimezone || !form.contactMethod) {
         setError('Please fill in all required fields.');
         return false;
       }
@@ -314,6 +316,17 @@ const Apply: React.FC = () => {
                   value={form.email}
                   onChange={(e) => set('email', e.target.value)}
                   placeholder="you@example.com"
+                />
+              </div>
+
+              <div>
+                <FieldLabel required>Mobile Number</FieldLabel>
+                <input
+                  type="tel"
+                  className={inputClass}
+                  value={form.mobileNumber}
+                  onChange={(e) => set('mobileNumber', e.target.value)}
+                  placeholder="e.g. +971 50 123 4567"
                 />
               </div>
 
